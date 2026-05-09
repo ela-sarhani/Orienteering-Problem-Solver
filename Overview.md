@@ -70,7 +70,7 @@ Finally, the problem aligns well with modern intelligent systems applications, e
 
 **Objective Function:**
 
-$$\text{Maximize} \quad \sum_{i \in V} p_i \cdot y_i$$
+$$\text{Max}( \quad \sum_{i \in V} p_i \cdot y_i)$$
 
 where:
 - **y_i** = 1 if vertex i is visited, 0 otherwise.
