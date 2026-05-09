@@ -1,4 +1,4 @@
-# Initial Conditions & Constraints — Orienteering Problem
+# Overview — Orienteering Problem
 
 ## Problem Choice and Justification
 
