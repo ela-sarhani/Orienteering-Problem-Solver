@@ -1,0 +1,2 @@
+# No third-party dependencies are required for the current implementation.
+# The solver uses only the Python standard library.

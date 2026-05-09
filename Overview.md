@@ -96,5 +96,5 @@ subject to:
 
 ## Approaches
 
-- **Exact Methods:** MIP + B&B (Mixed Integer Programming solved using Branch and Bound), B&C (Branch and Cut), and Dynamic Programming.
+- **Exact Methods:** MILP + B&B (Mixed Integer Linear Programming with Branch and Bound), B&C (Branch and Cut), and Dynamic Programming.
 - **Metaheuristics:** Genetic Algorithm, Tabu Search, and GRASP.
