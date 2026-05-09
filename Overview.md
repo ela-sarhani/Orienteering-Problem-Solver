@@ -76,12 +76,8 @@ where:
 - **y_i** = 1 if vertex i is visited, 0 otherwise.
 - **p_i** = profit from vertex i.
 
-**Equivalently (in terms of a solution tour):**
-
-$$\text{Maximize} \quad \sum_{i \in \text{visited}} p_i$$
-
 subject to:
-- Distance(tour) ≤ B.
+- Distance(tour) ≤ B meaning $$\sum_{\text{edges in route}} c_{ij} \leq B $$
 - Tour starts and ends at vertex 0 and visits each selected node exactly once.
 
 
