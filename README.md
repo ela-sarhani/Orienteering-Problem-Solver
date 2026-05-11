@@ -3,7 +3,7 @@
 This repository implements exact and metaheuristic approaches for the Orienteering Problem, with JSON outputs and interactive HTML visualizations for every approach, tested on an example OP illustrated in this JSON file: Orienteering-Problem-Solver\instances\shared_test\example_op.json.
 
 ## Project Layout
-
+- `Overview.md` provides an overview of the problem (OP), its parameters, constraints, and assumptions; it covers the basics needed to formulate the problem and solve it using the different approaches.
 - `exact_approaches/` contains Branch and Bound, Branch and Cut, and Dynamic Programming.
 - `metaheuristic_approaches/` contains Genetic Algorithm, Tabu Search, and GRASP.
 - `instances/` contains the benchmark instance used for validation plus two comparison instances with different sizes.
