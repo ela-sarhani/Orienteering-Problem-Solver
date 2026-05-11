@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabu Search Progression Viewer</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Segoe UI, Arial, sans-serif; background: linear-gradient(135deg, #eef4f8, #f7f1e8); color: #152433; }
+    .container { max-width: 1500px; margin: 0 auto; padding: 18px; }
+    .hero { background: rgba(255,255,255,0.85); border: 1px solid rgba(21,36,51,0.08); border-radius: 18px; padding: 16px 18px; box-shadow: 0 10px 30px rgba(21,36,51,0.08); margin-bottom: 14px; }
+    .hero h1 { margin: 0 0 6px 0; font-size: 26px; }
+    .hero p { margin: 0; color: #4d657b; line-height: 1.45; }
+    .controls, .panel { background: rgba(255,255,255,0.95); border-radius: 16px; box-shadow: 0 10px 30px rgba(21,36,51,0.08); border: 1px solid rgba(21,36,51,0.06); }
+    .controls { padding: 12px 14px; margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    button { background: #1d70b8; color: white; border: 0; border-radius: 10px; padding: 9px 15px; cursor: pointer; font-weight: 600; }
+    button:disabled { background: #9fb7cb; cursor: not-allowed; }
+    .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 12px; }
+    .kpi { padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.94); border: 1px solid rgba(21,36,51,0.07); box-shadow: 0 8px 18px rgba(21,36,51,0.05); }
+    .kpi .label { color: #5a7084; font-size: 12px; }
+    .kpi .value { font-size: 20px; font-weight: 700; margin-top: 4px; }
+    .layout { display: grid; grid-template-columns: 2.2fr 1fr; gap: 12px; }
+    .panel { padding: 12px; }
+    #graphView { width: 100%; height: 560px; }
+    #trendChart { width: 100%; height: 250px; margin-top: 10px; }
+    .decision-log { max-height: 650px; overflow: auto; font-size: 12px; }
+    .entry { border-left: 4px solid #c7d4df; padding: 8px 10px; margin-bottom: 8px; border-radius: 10px; background: #f8fbfe; }
+    .entry.improve { border-left-color: #1b9a59; }
+    .entry.iteration { border-left-color: #1d70b8; }
+    .entry.prune { border-left-color: #d22e47; }
+    .best-box { background: linear-gradient(135deg, #fff8e9, #fffdf5); border: 1px solid #f0cf82; border-left: 6px solid #f4a100; border-radius: 14px; padding: 12px; margin-bottom: 12px; }
+    .best-box h3 { margin: 0 0 8px 0; color: #c36d00; }
+    .best-box .small { font-size: 11px; color: #6b6b6b; line-height: 1.45; }
+    @media (max-width: 1100px) { .kpis { grid-template-columns: repeat(3, 1fr); } .layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>Tabu Search Progression Viewer</h1>
+      <p>Interactive playback of tabu iterations, aspiration moves, and incumbent updates.</p>
+    </div>
+
+    <div class="controls">
+      <button id="playBtn" onclick="playAnimation()">Play</button>
+      <button id="pauseBtn" onclick="pauseAnimation()" disabled>Pause</button>
+      <button onclick="resetAnimation()">Reset</button>
+      <label>Step</label>
+      <input id="stepSlider" type="range" min="0" max="0" value="0" oninput="goToStep(this.value)" style="width: 320px;" />
+      <span id="stepLabel">0 / 0</span>
+      <label>Speed</label>
+      <input id="speedSlider" type="range" min="100" max="1400" value="650" style="width: 180px;" />
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="label">Current Profit</div><div class="value" id="profitValue">0.00</div></div>
+      <div class="kpi"><div class="label">Remaining Budget</div><div class="value" id="budgetValue">0.00</div></div>
+      <div class="kpi"><div class="label">Current Route Cost</div><div class="value" id="costValue">0.00</div></div>
+      <div class="kpi"><div class="label">Best Incumbent</div><div class="value" id="incumbentValue">0.00</div></div>
+      <div class="kpi"><div class="label">Iterations</div><div class="value" id="iterationsValue">0</div></div>
+      <div class="kpi"><div class="label">Candidates Evaluated</div><div class="value" id="evaluatedValue">0</div></div>
+    </div>
+
+    <div class="layout">
+      <div class="panel">
+        <div id="graphView"></div>
+        <div id="trendChart"></div>
+      </div>
+      <div class="panel">
+        <div class="best-box">
+          <h3>Best Solution Found</h3>
+          <div style="background:#fff; padding:10px; border-radius:10px; font-family: monospace; font-size:13px;">
+            <div><strong>Route:</strong> <span id="bestRoute">—</span></div>
+            <div><strong>Profit:</strong> <span id="bestProfit">0.00</span> / <span id="budgetLabel">0.00</span></div>
+            <div><strong>Cost:</strong> <span id="bestCost">0.00</span></div>
+            <div><strong>Nodes:</strong> <span id="bestNodes">0</span></div>
+          </div>
+          <div class="small">Found at: <span id="bestFoundAt">step 0</span><br />Best-so-far route is updated whenever a better feasible tour is found.</div>
+        </div>
+        <h3 style="margin: 10px 0 6px 0;">Step Outcome</h3>
+        <div id="outcomeBox" style="font-size: 13px; line-height: 1.55; margin-bottom: 10px;"></div>
+        <h3 style="margin: 0 0 6px 0;">Decision Log</h3>
+        <div class="decision-log" id="decisionLog"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const instanceData = {"name": "comparative_large_op", "n": 9, "budget": 20.0, "cost_matrix": [[0.0, 2.23606797749979, 4.0, 4.123105625617661, 6.324555320336759, 5.830951894845301, 7.0710678118654755, 8.06225774829855, 8.06225774829855], [2.23606797749979, 0.0, 2.23606797749979, 3.1622776601683795, 4.123105625617661, 4.123105625617661, 5.0, 5.830951894845301, 6.0], [4.0, 2.23606797749979, 0.0, 5.0, 2.8284271247461903, 5.0990195135927845, 5.0990195135927845, 5.0, 4.123105625617661], [4.123105625617661, 3.1622776601683795, 5.0, 0.0, 5.385164807134504, 2.23606797749979, 4.123105625617661, 6.0, 7.615773105863909], [6.324555320336759, 4.123105625617661, 2.8284271247461903, 5.385164807134504, 0.0, 4.242640687119285, 3.1622776601683795, 2.23606797749979, 2.23606797749979], [5.830951894845301, 4.123105625617661, 5.0990195135927845, 2.23606797749979, 4.242640687119285, 0.0, 2.0, 4.123105625617661, 6.4031242374328485], [7.0710678118654755, 5.0, 5.0990195135927845, 4.123105625617661, 3.1622776601683795, 2.0, 0.0, 2.23606797749979, 5.0], [8.06225774829855, 5.830951894845301, 5.0, 6.0, 2.23606797749979, 4.123105625617661, 2.23606797749979, 0.0, 3.1622776601683795], [8.06225774829855, 6.0, 4.123105625617661, 7.615773105863909, 2.23606797749979, 6.4031242374328485, 5.0, 3.1622776601683795, 0.0]], "visualization": {"name": "comparative_large_op", "start": 0, "budget": 20.0, "route": [0, 2, 4, 7, 6, 5, 3, 0], "route_edges": [[0, 2], [2, 4], [4, 7], [7, 6], [6, 5], [5, 3], [3, 0]], "route_points": [[0.0, 0.0], [4.0, 0.0], [6.0, 2.0], [7.0, 4.0], [5.0, 5.0], [3.0, 5.0], [1.0, 4.0], [0.0, 0.0]], "nodes": [{"id": 0, "profit": 0.0, "visited": false, "x": 0.0, "y": 0.0}, {"id": 1, "profit": 5.0, "visited": false, "x": 2.0, "y": 1.0}, {"id": 2, "profit": 8.0, "visited": true, "x": 4.0, "y": 0.0}, {"id": 3, "profit": 7.0, "visited": true, "x": 1.0, "y": 4.0}, {"id": 4, "profit": 9.0, "visited": true, "x": 6.0, "y": 2.0}, {"id": 5, "profit": 6.0, "visited": true, "x": 3.0, "y": 5.0}, {"id": 6, "profit": 10.0, "visited": true, "x": 5.0, "y": 5.0}, {"id": 7, "profit": 11.0, "visited": true, "x": 7.0, "y": 4.0}, {"id": 8, "profit": 12.0, "visited": false, "x": 8.0, "y": 1.0}], "route_cost": 19.65973668286322, "route_profit": 51.0, "has_coordinates": true}, "best_route": [0, 2, 4, 7, 6, 5, 3, 0], "best_profit": 51.0, "best_cost": 19.65973668286322};
+    const algorithmSteps = {"total_steps": 92, "steps": [{"step_number": 1, "action": "initialize", "route": [0, 1, 2, 4, 7, 6, 5, 0], "current_profit": 49.0, "current_cost": 19.60365092959065, "remaining_budget": 0.3963490704093502, "iterations": 0, "candidate_evaluations": 0, "decision_reason": "greedy incumbent initialized", "candidate_nodes": [], "best_incumbent_profit": 49.0}, {"step_number": 2, "action": "iteration", "route": [0, 2, 4, 7, 6, 5, 0], "current_profit": 44.0, "current_cost": 19.13151497459107, "remaining_budget": 0.8684850254089298, "iterations": 1, "candidate_evaluations": 6, "decision_reason": "remove node 1", "candidate_nodes": [1, 5, 2, 4, 6], "best_incumbent_profit": 49.0}, {"step_number": 3, "action": "iteration", "route": [0, 2, 4, 7, 6, 5, 3, 0], "current_profit": 51.0, "current_cost": 19.65973668286322, "remaining_budget": 0.34026331713678104, "iterations": 2, "candidate_evaluations": 13, "decision_reason": "insert node 3", "candidate_nodes": [3, 1, 5, 2, 4], "best_incumbent_profit": 49.0}, {"step_number": 4, "action": "update_incumbent", "route": [0, 2, 4, 7, 6, 5, 3, 0], "current_profit": 51.0, "current_cost": 19.65973668286322, "remaining_budget": 0.34026331713678104, "iterations": 2, "candidate_evaluations": 13, "decision_reason": "improved incumbent after iteration 2", "candidate_nodes": [], "best_incumbent_profit": 51.0}, {"step_number": 5, "action": "iteration", "route": [0, 2, 4, 7, 6, 3, 0], "current_profit": 45.0, "current_cost": 19.54677433098109, "remaining_budget": 0.45322566901890937, "iterations": 3, "candidate_evaluations": 19, "decision_reason": "remove node 5", "candidate_nodes": [5, 3, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 6, "action": "iteration", "route": [0, 4, 7, 6, 3, 0], "current_profit": 37.0, "current_cost": 19.042902526571662, "remaining_budget": 0.9570974734283375, "iterations": 4, "candidate_evaluations": 25, "decision_reason": "remove node 2", "candidate_nodes": [5, 3, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 7, "action": "iteration", "route": [0, 7, 6, 3, 0], "current_profit": 28.0, "current_cost": 18.544536977033662, "remaining_budget": 1.4554630229663381, "iterations": 5, "candidate_evaluations": 32, "decision_reason": "remove node 4", "candidate_nodes": [2, 5, 1, 3, 4], "best_incumbent_profit": 51.0}, {"step_number": 8, "action": "iteration", "route": [0, 7, 3, 0], "current_profit": 18.0, "current_cost": 18.18536337391621, "remaining_budget": 1.8146366260837894, "iterations": 6, "candidate_evaluations": 39, "decision_reason": "remove node 6", "candidate_nodes": [4, 2, 5, 1, 3], "best_incumbent_profit": 51.0}, {"step_number": 9, "action": "iteration", "route": [0, 3, 0], "current_profit": 7.0, "current_cost": 8.246211251235321, "remaining_budget": 11.753788748764679, "iterations": 7, "candidate_evaluations": 47, "decision_reason": "remove node 7", "candidate_nodes": [6, 4, 2, 5, 1], "best_incumbent_profit": 51.0}, {"step_number": 10, "action": "iteration", "route": [0, 8, 3, 0], "current_profit": 19.0, "current_cost": 19.80113647978012, "remaining_budget": 0.19886352021988074, "iterations": 8, "candidate_evaluations": 55, "decision_reason": "insert node 8", "candidate_nodes": [8, 7, 6, 4, 2], "best_incumbent_profit": 51.0}, {"step_number": 11, "action": "iteration", "route": [0, 1, 8, 3, 0], "current_profit": 24.0, "current_cost": 19.97494670898136, "remaining_budget": 0.025053291018640067, "iterations": 9, "candidate_evaluations": 61, "decision_reason": "insert node 1", "candidate_nodes": [4, 2, 1, 3, 3], "best_incumbent_profit": 51.0}, {"step_number": 12, "action": "iteration", "route": [0, 1, 8, 0], "current_profit": 17.0, "current_cost": 16.29832572579834, "remaining_budget": 3.701674274201661, "iterations": 10, "candidate_evaluations": 65, "decision_reason": "remove node 3", "candidate_nodes": [4, 1, 3, 8], "best_incumbent_profit": 51.0}, {"step_number": 13, "action": "iteration", "route": [0, 1, 8, 2, 0], "current_profit": 25.0, "current_cost": 16.35917360311745, "remaining_budget": 3.6408263968825487, "iterations": 11, "candidate_evaluations": 72, "decision_reason": "insert node 2", "candidate_nodes": [7, 4, 2, 3, 8], "best_incumbent_profit": 51.0}, {"step_number": 14, "action": "iteration", "route": [0, 1, 4, 8, 2, 0], "current_profit": 34.0, "current_cost": 16.718347206234903, "remaining_budget": 3.2816527937650974, "iterations": 12, "candidate_evaluations": 77, "decision_reason": "insert node 4", "candidate_nodes": [7, 4, 1, 2, 8], "best_incumbent_profit": 51.0}, {"step_number": 15, "action": "iteration", "route": [0, 1, 4, 7, 8, 2, 0], "current_profit": 45.0, "current_cost": 19.88062486640328, "remaining_budget": 0.11937513359671925, "iterations": 13, "candidate_evaluations": 82, "decision_reason": "aspiration move insert node 7", "candidate_nodes": [7, 1, 2, 4, 8], "best_incumbent_profit": 51.0}, {"step_number": 16, "action": "iteration", "route": [0, 4, 7, 8, 2, 0], "current_profit": 40.0, "current_cost": 19.84600658362259, "remaining_budget": 0.1539934163774106, "iterations": 14, "candidate_evaluations": 87, "decision_reason": "aspiration move remove node 1", "candidate_nodes": [1, 2, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 17, "action": "iteration", "route": [0, 4, 7, 2, 0], "current_profit": 28.0, "current_cost": 17.56062329783655, "remaining_budget": 2.4393767021634503, "iterations": 15, "candidate_evaluations": 92, "decision_reason": "remove node 8", "candidate_nodes": [1, 2, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 18, "action": "iteration", "route": [0, 4, 7, 6, 2, 0], "current_profit": 38.0, "current_cost": 19.895710788929122, "remaining_budget": 0.10428921107087774, "iterations": 16, "candidate_evaluations": 101, "decision_reason": "insert node 6", "candidate_nodes": [8, 6, 1, 4, 7], "best_incumbent_profit": 51.0}, {"step_number": 19, "action": "iteration", "route": [0, 1, 4, 7, 6, 2, 0], "current_profit": 43.0, "current_cost": 19.930329071709814, "remaining_budget": 0.0696709282901864, "iterations": 17, "candidate_evaluations": 107, "decision_reason": "aspiration move insert node 1", "candidate_nodes": [1, 2, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 20, "action": "iteration", "route": [0, 1, 2, 4, 7, 6, 0], "current_profit": 43.0, "current_cost": 18.843766846610826, "remaining_budget": 1.1562331533891737, "iterations": 18, "candidate_evaluations": 113, "decision_reason": "relocate node 2", "candidate_nodes": [2, 1, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 21, "action": "iteration", "route": [0, 1, 2, 4, 7, 6, 5, 0], "current_profit": 49.0, "current_cost": 19.60365092959065, "remaining_budget": 0.3963490704093502, "iterations": 19, "candidate_evaluations": 120, "decision_reason": "insert node 5", "candidate_nodes": [5, 1, 1, 2, 4], "best_incumbent_profit": 51.0}, {"step_number": 22, "action": "iteration", "route": [0, 1, 2, 7, 6, 5, 0], "current_profit": 40.0, "current_cost": 19.539155827344672, "remaining_budget": 0.46084417265532807, "iterations": 20, "candidate_evaluations": 126, "decision_reason": "remove node 4", "candidate_nodes": [1, 5, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 23, "action": "iteration", "route": [0, 1, 2, 6, 5, 0], "current_profit": 29.0, "current_cost": 17.402107363437665, "remaining_budget": 2.597892636562335, "iterations": 21, "candidate_evaluations": 132, "decision_reason": "remove node 7", "candidate_nodes": [4, 1, 5, 2, 6], "best_incumbent_profit": 51.0}, {"step_number": 24, "action": "iteration", "route": [0, 1, 2, 6, 5, 3, 0], "current_profit": 36.0, "current_cost": 17.930329071709814, "remaining_budget": 2.0696709282901864, "iterations": 22, "candidate_evaluations": 139, "decision_reason": "insert node 3", "candidate_nodes": [7, 4, 3, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 25, "action": "iteration", "route": [0, 1, 2, 5, 3, 0], "current_profit": 26.0, "current_cost": 15.930329071709814, "remaining_budget": 4.069670928290186, "iterations": 23, "candidate_evaluations": 145, "decision_reason": "remove node 6", "candidate_nodes": [4, 1, 5, 3, 2], "best_incumbent_profit": 51.0}, {"step_number": 26, "action": "iteration", "route": [0, 2, 5, 3, 0], "current_profit": 21.0, "current_cost": 15.458193116710234, "remaining_budget": 4.541806883289766, "iterations": 24, "candidate_evaluations": 152, "decision_reason": "remove node 1", "candidate_nodes": [7, 6, 4, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 27, "action": "iteration", "route": [0, 5, 3, 0], "current_profit": 13.0, "current_cost": 12.19012549796275, "remaining_budget": 7.80987450203725, "iterations": 25, "candidate_evaluations": 159, "decision_reason": "remove node 2", "candidate_nodes": [7, 6, 4, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 28, "action": "iteration", "route": [0, 3, 0], "current_profit": 7.0, "current_cost": 8.246211251235321, "remaining_budget": 11.753788748764679, "iterations": 26, "candidate_evaluations": 167, "decision_reason": "remove node 5", "candidate_nodes": [7, 6, 4, 2, 1], "best_incumbent_profit": 51.0}, {"step_number": 29, "action": "iteration", "route": [0, 8, 3, 0], "current_profit": 19.0, "current_cost": 19.80113647978012, "remaining_budget": 0.19886352021988074, "iterations": 27, "candidate_evaluations": 175, "decision_reason": "insert node 8", "candidate_nodes": [8, 7, 6, 4, 2], "best_incumbent_profit": 51.0}, {"step_number": 30, "action": "iteration", "route": [0, 8, 4, 3, 0], "current_profit": 28.0, "current_cost": 19.806596158550505, "remaining_budget": 0.19340384144949496, "iterations": 28, "candidate_evaluations": 181, "decision_reason": "insert node 4", "candidate_nodes": [4, 2, 1, 3, 3], "best_incumbent_profit": 51.0}, {"step_number": 31, "action": "iteration", "route": [0, 8, 4, 0], "current_profit": 21.0, "current_cost": 16.6228810461351, "remaining_budget": 3.377118953864901, "iterations": 29, "candidate_evaluations": 186, "decision_reason": "remove node 3", "candidate_nodes": [2, 1, 3, 4, 8], "best_incumbent_profit": 51.0}, {"step_number": 32, "action": "iteration", "route": [0, 7, 8, 4, 0], "current_profit": 32.0, "current_cost": 19.785158706303477, "remaining_budget": 0.21484129369652294, "iterations": 30, "candidate_evaluations": 193, "decision_reason": "insert node 7", "candidate_nodes": [7, 2, 3, 1, 4], "best_incumbent_profit": 51.0}, {"step_number": 33, "action": "iteration", "route": [0, 1, 7, 8, 4, 0], "current_profit": 37.0, "current_cost": 19.78992083035002, "remaining_budget": 0.21007916964997975, "iterations": 31, "candidate_evaluations": 199, "decision_reason": "insert node 1", "candidate_nodes": [1, 8, 4, 4, 7], "best_incumbent_profit": 51.0}, {"step_number": 34, "action": "iteration", "route": [0, 7, 8, 4, 0], "current_profit": 32.0, "current_cost": 19.785158706303477, "remaining_budget": 0.21484129369652294, "iterations": 32, "candidate_evaluations": 203, "decision_reason": "aspiration move remove node 1", "candidate_nodes": [1, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 35, "action": "iteration", "route": [0, 1, 7, 8, 4, 0], "current_profit": 37.0, "current_cost": 19.78992083035002, "remaining_budget": 0.21007916964997975, "iterations": 33, "candidate_evaluations": 209, "decision_reason": "aspiration move insert node 1", "candidate_nodes": [1, 8, 4, 4, 7], "best_incumbent_profit": 51.0}, {"step_number": 36, "action": "iteration", "route": [0, 1, 7, 4, 0], "current_profit": 25.0, "current_cost": 16.62764317018164, "remaining_budget": 3.3723568298183615, "iterations": 34, "candidate_evaluations": 213, "decision_reason": "remove node 8", "candidate_nodes": [1, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 37, "action": "iteration", "route": [0, 1, 6, 7, 4, 0], "current_profit": 35.0, "current_cost": 18.03275925283613, "remaining_budget": 1.9672407471638707, "iterations": 35, "candidate_evaluations": 221, "decision_reason": "insert node 6", "candidate_nodes": [8, 6, 2, 3, 5], "best_incumbent_profit": 51.0}, {"step_number": 38, "action": "iteration", "route": [0, 1, 6, 7, 4, 2, 0], "current_profit": 43.0, "current_cost": 18.536631057245557, "remaining_budget": 1.4633689427544425, "iterations": 36, "candidate_evaluations": 228, "decision_reason": "insert node 2", "candidate_nodes": [2, 5, 1, 1, 4], "best_incumbent_profit": 51.0}, {"step_number": 39, "action": "iteration", "route": [0, 1, 5, 6, 7, 4, 2, 0], "current_profit": 49.0, "current_cost": 19.65973668286322, "remaining_budget": 0.34026331713678104, "iterations": 37, "candidate_evaluations": 234, "decision_reason": "insert node 5", "candidate_nodes": [5, 1, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 40, "action": "iteration", "route": [0, 1, 5, 6, 7, 2, 0], "current_profit": 40.0, "current_cost": 19.59524158061724, "remaining_budget": 0.4047584193827589, "iterations": 38, "candidate_evaluations": 241, "decision_reason": "remove node 4", "candidate_nodes": [1, 1, 5, 2, 4], "best_incumbent_profit": 51.0}, {"step_number": 41, "action": "iteration", "route": [0, 1, 5, 6, 2, 0], "current_profit": 29.0, "current_cost": 17.458193116710234, "remaining_budget": 2.541806883289766, "iterations": 39, "candidate_evaluations": 248, "decision_reason": "remove node 7", "candidate_nodes": [4, 1, 1, 5, 2], "best_incumbent_profit": 51.0}, {"step_number": 42, "action": "iteration", "route": [0, 1, 3, 5, 6, 2, 0], "current_profit": 36.0, "current_cost": 18.733433128760744, "remaining_budget": 1.266566871239256, "iterations": 40, "candidate_evaluations": 256, "decision_reason": "insert node 3", "candidate_nodes": [7, 4, 3, 1, 1], "best_incumbent_profit": 51.0}, {"step_number": 43, "action": "iteration", "route": [0, 3, 5, 6, 2, 1, 0], "current_profit": 36.0, "current_cost": 17.930329071709814, "remaining_budget": 2.0696709282901864, "iterations": 41, "candidate_evaluations": 263, "decision_reason": "relocate node 1", "candidate_nodes": [4, 1, 1, 5, 3], "best_incumbent_profit": 51.0}, {"step_number": 44, "action": "iteration", "route": [0, 3, 5, 2, 1, 0], "current_profit": 26.0, "current_cost": 15.930329071709814, "remaining_budget": 4.069670928290186, "iterations": 42, "candidate_evaluations": 269, "decision_reason": "remove node 6", "candidate_nodes": [4, 1, 5, 3, 2], "best_incumbent_profit": 51.0}, {"step_number": 45, "action": "iteration", "route": [0, 3, 5, 1, 0], "current_profit": 18.0, "current_cost": 12.7183472062349, "remaining_budget": 7.281652793765099, "iterations": 43, "candidate_evaluations": 276, "decision_reason": "remove node 2", "candidate_nodes": [7, 6, 4, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 46, "action": "iteration", "route": [0, 3, 1, 0], "current_profit": 12.0, "current_cost": 9.52145126328583, "remaining_budget": 10.47854873671417, "iterations": 44, "candidate_evaluations": 283, "decision_reason": "remove node 5", "candidate_nodes": [7, 6, 4, 2, 1], "best_incumbent_profit": 51.0}, {"step_number": 47, "action": "iteration", "route": [0, 3, 8, 1, 0], "current_profit": 24.0, "current_cost": 19.97494670898136, "remaining_budget": 0.025053291018640067, "iterations": 45, "candidate_evaluations": 292, "decision_reason": "insert node 8", "candidate_nodes": [8, 7, 6, 4, 2], "best_incumbent_profit": 51.0}, {"step_number": 48, "action": "iteration", "route": [0, 3, 4, 8, 1, 0], "current_profit": 33.0, "current_cost": 19.980406387751746, "remaining_budget": 0.01959361224825429, "iterations": 46, "candidate_evaluations": 296, "decision_reason": "insert node 4", "candidate_nodes": [4, 1, 3, 8], "best_incumbent_profit": 51.0}, {"step_number": 49, "action": "iteration", "route": [0, 4, 8, 1, 0], "current_profit": 26.0, "current_cost": 16.79669127533634, "remaining_budget": 3.2033087246636605, "iterations": 47, "candidate_evaluations": 300, "decision_reason": "remove node 3", "candidate_nodes": [1, 3, 4, 8], "best_incumbent_profit": 51.0}, {"step_number": 50, "action": "iteration", "route": [0, 4, 8, 7, 1, 0], "current_profit": 37.0, "current_cost": 19.78992083035002, "remaining_budget": 0.21007916964997975, "iterations": 48, "candidate_evaluations": 309, "decision_reason": "insert node 7", "candidate_nodes": [7, 2, 3, 4, 8], "best_incumbent_profit": 51.0}, {"step_number": 51, "action": "iteration", "route": [0, 4, 8, 7, 0], "current_profit": 32.0, "current_cost": 19.785158706303477, "remaining_budget": 0.21484129369652294, "iterations": 49, "candidate_evaluations": 313, "decision_reason": "remove node 1", "candidate_nodes": [1, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 52, "action": "iteration", "route": [0, 4, 8, 7, 1, 0], "current_profit": 37.0, "current_cost": 19.78992083035002, "remaining_budget": 0.21007916964997975, "iterations": 50, "candidate_evaluations": 318, "decision_reason": "aspiration move insert node 1", "candidate_nodes": [1, 7, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 53, "action": "iteration", "route": [0, 4, 8, 7, 0], "current_profit": 32.0, "current_cost": 19.785158706303477, "remaining_budget": 0.21484129369652294, "iterations": 51, "candidate_evaluations": 322, "decision_reason": "aspiration move remove node 1", "candidate_nodes": [1, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 54, "action": "iteration", "route": [0, 4, 7, 0], "current_profit": 20.0, "current_cost": 16.6228810461351, "remaining_budget": 3.377118953864901, "iterations": 52, "candidate_evaluations": 327, "decision_reason": "remove node 8", "candidate_nodes": [1, 7, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 55, "action": "iteration", "route": [0, 4, 7, 6, 0], "current_profit": 30.0, "current_cost": 17.867759087201815, "remaining_budget": 2.132240912798185, "iterations": 53, "candidate_evaluations": 336, "decision_reason": "insert node 6", "candidate_nodes": [8, 6, 2, 3, 5], "best_incumbent_profit": 51.0}, {"step_number": 56, "action": "iteration", "route": [0, 2, 4, 7, 6, 0], "current_profit": 38.0, "current_cost": 18.371630891611247, "remaining_budget": 1.6283691083887533, "iterations": 54, "candidate_evaluations": 343, "decision_reason": "insert node 2", "candidate_nodes": [2, 3, 5, 1, 4], "best_incumbent_profit": 51.0}, {"step_number": 57, "action": "iteration", "route": [0, 2, 4, 7, 6, 3, 0], "current_profit": 45.0, "current_cost": 19.54677433098109, "remaining_budget": 0.45322566901890937, "iterations": 55, "candidate_evaluations": 350, "decision_reason": "insert node 3", "candidate_nodes": [3, 5, 1, 2, 4], "best_incumbent_profit": 51.0}, {"step_number": 58, "action": "iteration", "route": [0, 2, 4, 7, 6, 5, 3, 0], "current_profit": 51.0, "current_cost": 19.65973668286322, "remaining_budget": 0.34026331713678104, "iterations": 56, "candidate_evaluations": 356, "decision_reason": "insert node 5", "candidate_nodes": [5, 3, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 59, "action": "iteration", "route": [0, 2, 7, 6, 5, 3, 0], "current_profit": 42.0, "current_cost": 19.59524158061724, "remaining_budget": 0.4047584193827589, "iterations": 57, "candidate_evaluations": 362, "decision_reason": "remove node 4", "candidate_nodes": [5, 3, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 60, "action": "iteration", "route": [0, 2, 6, 5, 3, 0], "current_profit": 31.0, "current_cost": 17.458193116710234, "remaining_budget": 2.541806883289766, "iterations": 58, "candidate_evaluations": 368, "decision_reason": "remove node 7", "candidate_nodes": [4, 5, 3, 2, 6], "best_incumbent_profit": 51.0}, {"step_number": 61, "action": "iteration", "route": [0, 1, 2, 6, 5, 3, 0], "current_profit": 36.0, "current_cost": 17.930329071709814, "remaining_budget": 2.0696709282901864, "iterations": 59, "candidate_evaluations": 375, "decision_reason": "insert node 1", "candidate_nodes": [7, 4, 1, 5, 3], "best_incumbent_profit": 51.0}, {"step_number": 62, "action": "iteration", "route": [0, 1, 2, 5, 3, 0], "current_profit": 26.0, "current_cost": 15.930329071709814, "remaining_budget": 4.069670928290186, "iterations": 60, "candidate_evaluations": 381, "decision_reason": "remove node 6", "candidate_nodes": [4, 1, 5, 3, 2], "best_incumbent_profit": 51.0}, {"step_number": 63, "action": "iteration", "route": [0, 1, 5, 3, 0], "current_profit": 18.0, "current_cost": 12.718347206234903, "remaining_budget": 7.281652793765097, "iterations": 61, "candidate_evaluations": 388, "decision_reason": "remove node 2", "candidate_nodes": [7, 6, 4, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 64, "action": "iteration", "route": [0, 1, 5, 0], "current_profit": 11.0, "current_cost": 12.19012549796275, "remaining_budget": 7.80987450203725, "iterations": 62, "candidate_evaluations": 395, "decision_reason": "remove node 3", "candidate_nodes": [7, 6, 4, 2, 1], "best_incumbent_profit": 51.0}, {"step_number": 65, "action": "iteration", "route": [0, 5, 1, 0], "current_profit": 11.0, "current_cost": 12.19012549796275, "remaining_budget": 7.80987450203725, "iterations": 63, "candidate_evaluations": 403, "decision_reason": "relocate node 5", "candidate_nodes": [7, 6, 4, 2, 3], "best_incumbent_profit": 51.0}, {"step_number": 66, "action": "iteration", "route": [0, 5, 4, 1, 0], "current_profit": 20.0, "current_cost": 16.432766185082038, "remaining_budget": 3.5672338149179623, "iterations": 64, "candidate_evaluations": 411, "decision_reason": "insert node 4", "candidate_nodes": [7, 6, 4, 2, 3], "best_incumbent_profit": 51.0}, {"step_number": 67, "action": "iteration", "route": [0, 5, 7, 4, 1, 0], "current_profit": 31.0, "current_cost": 18.5492991010802, "remaining_budget": 1.4507008989197985, "iterations": 65, "candidate_evaluations": 418, "decision_reason": "insert node 7", "candidate_nodes": [7, 6, 2, 3, 1], "best_incumbent_profit": 51.0}, {"step_number": 68, "action": "iteration", "route": [0, 5, 7, 4, 0], "current_profit": 26.0, "current_cost": 18.51468081829951, "remaining_budget": 1.4853191817004898, "iterations": 66, "candidate_evaluations": 425, "decision_reason": "remove node 1", "candidate_nodes": [6, 2, 3, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 69, "action": "iteration", "route": [0, 5, 6, 7, 4, 0], "current_profit": 36.0, "current_cost": 18.62764317018164, "remaining_budget": 1.3723568298183615, "iterations": 67, "candidate_evaluations": 432, "decision_reason": "insert node 6", "candidate_nodes": [6, 2, 3, 1, 5], "best_incumbent_profit": 51.0}, {"step_number": 70, "action": "iteration", "route": [0, 5, 6, 7, 4, 2, 0], "current_profit": 44.0, "current_cost": 19.13151497459107, "remaining_budget": 0.8684850254089298, "iterations": 68, "candidate_evaluations": 439, "decision_reason": "insert node 2", "candidate_nodes": [2, 3, 1, 5, 4], "best_incumbent_profit": 51.0}, {"step_number": 71, "action": "iteration", "route": [0, 3, 5, 6, 7, 4, 2, 0], "current_profit": 51.0, "current_cost": 19.65973668286322, "remaining_budget": 0.34026331713678104, "iterations": 69, "candidate_evaluations": 446, "decision_reason": "insert node 3", "candidate_nodes": [3, 1, 5, 2, 4], "best_incumbent_profit": 51.0}, {"step_number": 72, "action": "iteration", "route": [0, 3, 6, 7, 4, 2, 0], "current_profit": 45.0, "current_cost": 19.54677433098109, "remaining_budget": 0.45322566901890937, "iterations": 70, "candidate_evaluations": 452, "decision_reason": "remove node 5", "candidate_nodes": [5, 3, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 73, "action": "iteration", "route": [0, 3, 6, 7, 2, 0], "current_profit": 36.0, "current_cost": 19.48227922873511, "remaining_budget": 0.5177207712648908, "iterations": 71, "candidate_evaluations": 458, "decision_reason": "remove node 4", "candidate_nodes": [5, 3, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 74, "action": "iteration", "route": [0, 3, 6, 2, 0], "current_profit": 25.0, "current_cost": 17.345230764828106, "remaining_budget": 2.6547692351718943, "iterations": 72, "candidate_evaluations": 465, "decision_reason": "remove node 7", "candidate_nodes": [4, 5, 1, 3, 2], "best_incumbent_profit": 51.0}, {"step_number": 75, "action": "iteration", "route": [0, 3, 6, 2, 1, 0], "current_profit": 30.0, "current_cost": 17.817366719827685, "remaining_budget": 2.1826332801723147, "iterations": 73, "candidate_evaluations": 472, "decision_reason": "insert node 1", "candidate_nodes": [7, 4, 5, 1, 3], "best_incumbent_profit": 51.0}, {"step_number": 76, "action": "iteration", "route": [0, 3, 2, 1, 0], "current_profit": 20.0, "current_cost": 13.595241580617241, "remaining_budget": 6.404758419382759, "iterations": 74, "candidate_evaluations": 479, "decision_reason": "remove node 6", "candidate_nodes": [7, 4, 5, 1, 3], "best_incumbent_profit": 51.0}, {"step_number": 77, "action": "iteration", "route": [0, 3, 1, 2, 0], "current_profit": 20.0, "current_cost": 13.52145126328583, "remaining_budget": 6.4785487367141705, "iterations": 75, "candidate_evaluations": 489, "decision_reason": "relocate node 2", "candidate_nodes": [7, 6, 4, 5, 3], "best_incumbent_profit": 51.0}, {"step_number": 78, "action": "iteration", "route": [0, 1, 2, 0], "current_profit": 13.0, "current_cost": 8.47213595499958, "remaining_budget": 11.52786404500042, "iterations": 76, "candidate_evaluations": 495, "decision_reason": "remove node 3", "candidate_nodes": [6, 4, 5, 1, 3], "best_incumbent_profit": 51.0}, {"step_number": 79, "action": "iteration", "route": [0, 1, 8, 2, 0], "current_profit": 25.0, "current_cost": 16.35917360311745, "remaining_budget": 3.6408263968825487, "iterations": 77, "candidate_evaluations": 504, "decision_reason": "insert node 8", "candidate_nodes": [8, 7, 6, 4, 3], "best_incumbent_profit": 51.0}, {"step_number": 80, "action": "iteration", "route": [0, 1, 4, 8, 2, 0], "current_profit": 34.0, "current_cost": 16.718347206234903, "remaining_budget": 3.2816527937650974, "iterations": 78, "candidate_evaluations": 509, "decision_reason": "insert node 4", "candidate_nodes": [7, 4, 1, 2, 8], "best_incumbent_profit": 51.0}, {"step_number": 81, "action": "iteration", "route": [0, 1, 4, 7, 8, 2, 0], "current_profit": 45.0, "current_cost": 19.88062486640328, "remaining_budget": 0.11937513359671925, "iterations": 79, "candidate_evaluations": 514, "decision_reason": "insert node 7", "candidate_nodes": [7, 1, 2, 4, 8], "best_incumbent_profit": 51.0}, {"step_number": 82, "action": "iteration", "route": [0, 4, 7, 8, 2, 0], "current_profit": 40.0, "current_cost": 19.84600658362259, "remaining_budget": 0.1539934163774106, "iterations": 80, "candidate_evaluations": 519, "decision_reason": "remove node 1", "candidate_nodes": [1, 2, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 83, "action": "iteration", "route": [0, 1, 4, 7, 8, 2, 0], "current_profit": 45.0, "current_cost": 19.88062486640328, "remaining_budget": 0.11937513359671925, "iterations": 81, "candidate_evaluations": 524, "decision_reason": "aspiration move insert node 1", "candidate_nodes": [1, 2, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 84, "action": "iteration", "route": [0, 1, 4, 7, 8, 0], "current_profit": 37.0, "current_cost": 19.81977698908417, "remaining_budget": 0.1802230109158316, "iterations": 82, "candidate_evaluations": 529, "decision_reason": "remove node 2", "candidate_nodes": [1, 2, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 85, "action": "iteration", "route": [0, 1, 4, 7, 8, 2, 0], "current_profit": 45.0, "current_cost": 19.88062486640328, "remaining_budget": 0.11937513359671925, "iterations": 83, "candidate_evaluations": 536, "decision_reason": "aspiration move insert node 2", "candidate_nodes": [2, 4, 8, 1, 4], "best_incumbent_profit": 51.0}, {"step_number": 86, "action": "iteration", "route": [0, 1, 4, 7, 2, 0], "current_profit": 33.0, "current_cost": 17.59524158061724, "remaining_budget": 2.404758419382759, "iterations": 84, "candidate_evaluations": 541, "decision_reason": "remove node 8", "candidate_nodes": [1, 2, 4, 7, 8], "best_incumbent_profit": 51.0}, {"step_number": 87, "action": "iteration", "route": [0, 1, 4, 7, 6, 2, 0], "current_profit": 43.0, "current_cost": 19.930329071709814, "remaining_budget": 0.0696709282901864, "iterations": 85, "candidate_evaluations": 549, "decision_reason": "insert node 6", "candidate_nodes": [8, 6, 4, 7, 1], "best_incumbent_profit": 51.0}, {"step_number": 88, "action": "iteration", "route": [0, 1, 7, 6, 2, 0], "current_profit": 34.0, "current_cost": 19.402107363437665, "remaining_budget": 0.5978926365623352, "iterations": 86, "candidate_evaluations": 555, "decision_reason": "remove node 4", "candidate_nodes": [2, 1, 2, 4, 6], "best_incumbent_profit": 51.0}, {"step_number": 89, "action": "iteration", "route": [0, 1, 6, 7, 2, 0], "current_profit": 34.0, "current_cost": 18.47213595499958, "remaining_budget": 1.5278640450004204, "iterations": 87, "candidate_evaluations": 563, "decision_reason": "relocate node 7", "candidate_nodes": [4, 7, 6, 2, 1], "best_incumbent_profit": 51.0}, {"step_number": 90, "action": "iteration", "route": [0, 1, 5, 6, 7, 2, 0], "current_profit": 40.0, "current_cost": 19.59524158061724, "remaining_budget": 0.4047584193827589, "iterations": 88, "candidate_evaluations": 569, "decision_reason": "insert node 5", "candidate_nodes": [4, 5, 1, 2, 6], "best_incumbent_profit": 51.0}, {"step_number": 91, "action": "iteration", "route": [0, 5, 6, 7, 2, 1, 0], "current_profit": 40.0, "current_cost": 19.53915582734467, "remaining_budget": 0.4608441726553316, "iterations": 89, "candidate_evaluations": 576, "decision_reason": "relocate node 1", "candidate_nodes": [4, 1, 1, 5, 2], "best_incumbent_profit": 51.0}, {"step_number": 92, "action": "iteration", "route": [0, 5, 6, 7, 1, 0], "current_profit": 32.0, "current_cost": 18.13403974469018, "remaining_budget": 1.865960255309819, "iterations": 90, "candidate_evaluations": 582, "decision_reason": "remove node 2", "candidate_nodes": [4, 1, 5, 2, 6], "best_incumbent_profit": 51.0}]};
+    const nodes = (instanceData.visualization && instanceData.visualization.nodes) || [];
+    const nodeById = new Map(nodes.map((node) => [node.id, node]));
+    const costMatrix = instanceData.cost_matrix || [];
+    const totalBudget = instanceData.budget || 0;
+
+    let currentStep = 0;
+    let isPlaying = false;
+    let playTimeout = null;
+
+    function routeEdges(route) {
+      const edges = [];
+      for (let index = 0; index < route.length - 1; index++) edges.push([route[index], route[index + 1]]);
+      return edges;
+    }
+
+    function buildEdgeTrace(edge, color, width, dash = 'solid') {
+      if (!edge) return null;
+      const a = nodeById.get(edge[0]);
+      const b = nodeById.get(edge[1]);
+      if (!a || !b) return null;
+      return { x: [a.x, b.x], y: [a.y, b.y], mode: 'lines', type: 'scatter', hoverinfo: 'skip', line: { color, width, dash }, showlegend: false };
+    }
+
+    function buildNodeTrace(visitedSet) {
+      const x = [], y = [], text = [], colors = [], sizes = [], symbols = [];
+      for (const node of nodes) {
+        x.push(node.x);
+        y.push(node.y);
+        text.push(`v${node.id} | p=${Number(node.profit).toFixed(1)}`);
+        if (node.id === 0) { colors.push('#1d70b8'); sizes.push(20); symbols.push('star'); }
+        else if (visitedSet.has(node.id)) { colors.push('#1b9a59'); sizes.push(16); symbols.push('circle'); }
+        else { colors.push('#97a9b8'); sizes.push(13); symbols.push('circle'); }
+      }
+      return { x, y, mode: 'markers+text', type: 'scatter', text, textposition: 'top center', marker: { color: colors, size: sizes, symbol: symbols, line: { color: '#20384d', width: 1 } }, hovertemplate: '%{text}<extra></extra>', showlegend: false };
+    }
+
+    function buildGraph(step) {
+      const traces = [];
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const ni = nodes[i], nj = nodes[j];
+          traces.push({ x: [ni.x, nj.x], y: [ni.y, nj.y], mode: 'lines', type: 'scatter', hoverinfo: 'skip', line: { color: '#d0dbe6', width: 1 }, showlegend: false });
+        }
+      }
+      for (const edge of routeEdges(step.route || [])) {
+        const t = buildEdgeTrace(edge, '#1d70b8', 4);
+        if (t) traces.push(t);
+      }
+      traces.push(buildNodeTrace(new Set((step.route || []).slice(1, -1))));
+      return traces;
+    }
+
+    function updateTrendChart() {
+      const history = algorithmSteps.steps.slice(0, currentStep + 1);
+      const xs = history.map((step) => step.step_number);
+      const profits = history.map((step) => step.current_profit);
+      const incumbent = history.map((step) => step.best_incumbent_profit);
+      const evaluations = history.map((step) => step.candidate_evaluations);
+      const layout = { title: 'Profit Progression', xaxis: { title: 'step' }, yaxis: { title: 'profit' }, margin: { l: 45, r: 20, t: 35, b: 35 }, legend: { orientation: 'h' } };
+      Plotly.react('trendChart', [
+        { x: xs, y: profits, mode: 'lines+markers', type: 'scatter', name: 'current profit', line: { color: '#1d70b8', width: 2 } },
+        { x: xs, y: incumbent, mode: 'lines+markers', type: 'scatter', name: 'best incumbent', line: { color: '#1b9a59', width: 2 } },
+        { x: xs, y: evaluations, mode: 'lines', type: 'scatter', name: 'evaluations', line: { color: '#f4a100', width: 2 }, yaxis: 'y2' }
+      ], { ...layout, yaxis2: { title: 'evaluations', overlaying: 'y', side: 'right' } }, { responsive: true, displayModeBar: false });
+    }
+
+    function isCompleteRoute(route) {
+      return Array.isArray(route) && route.length >= 2 && route[0] === 0 && route[route.length - 1] === 0;
+    }
+
+    function updateBestSolution(step) {
+      const bestRoute = instanceData.best_route || [0, 0];
+      document.getElementById('bestRoute').textContent = bestRoute.join(' → ');
+      document.getElementById('bestProfit').textContent = Number(instanceData.best_profit || 0).toFixed(2);
+      document.getElementById('budgetLabel').textContent = Number(totalBudget).toFixed(2);
+      document.getElementById('bestCost').textContent = Number(instanceData.best_cost || 0).toFixed(2);
+      document.getElementById('bestNodes').textContent = Math.max(0, bestRoute.length - 2);
+
+      // Find first occurrence of the best route up to the current playback step
+      const historySlice = algorithmSteps.steps.slice(0, currentStep + 1);
+      const foundStep = historySlice.find((candidate) => isCompleteRoute(candidate.route || []) && JSON.stringify(candidate.route || []) === JSON.stringify(bestRoute));
+      document.getElementById('bestFoundAt').textContent = foundStep ? `step ${foundStep.step_number}` : 'not found yet';
+    }
+
+    function updateKpis(step) {
+      document.getElementById('profitValue').textContent = Number(step.current_profit).toFixed(2);
+      document.getElementById('budgetValue').textContent = Number(step.remaining_budget).toFixed(2);
+      document.getElementById('costValue').textContent = Number(step.current_cost).toFixed(2);
+      document.getElementById('incumbentValue').textContent = Number(step.best_incumbent_profit).toFixed(2);
+      document.getElementById('iterationsValue').textContent = step.iterations;
+      document.getElementById('evaluatedValue').textContent = step.candidate_evaluations;
+      document.getElementById('stepLabel').textContent = `${currentStep + 1} / ${algorithmSteps.total_steps}`;
+    }
+
+    function updateOutcome(step) {
+      document.getElementById('outcomeBox').innerHTML =
+        `<b>Action:</b> ${step.action}<br>` +
+        `<b>Route:</b> [${(step.route || []).join(', ')}]<br>` +
+        `<b>Reason:</b> ${step.decision_reason || '-'}`;
+    }
+
+    function updateDecisionLog() {
+      const log = document.getElementById('decisionLog');
+      log.innerHTML = '';
+      algorithmSteps.steps.slice(0, currentStep + 1).reverse().forEach((step) => {
+        const entry = document.createElement('div');
+        entry.className = `entry ${step.action.includes('improve') ? 'improve' : step.action === 'iteration' ? 'iteration' : step.action === 'prune' ? 'prune' : ''}`;
+        entry.innerHTML = `<b>#${step.step_number} ${step.action}</b><br>route=[${(step.route || []).join(', ')}]<br>profit=${Number(step.current_profit).toFixed(2)}, cost=${Number(step.current_cost).toFixed(2)}, remaining_budget=${Number(step.remaining_budget).toFixed(2)}<br>reason: ${step.decision_reason || '-'}`;
+        log.appendChild(entry);
+      });
+    }
+
+    function updateVisualization() {
+      if (!algorithmSteps.steps || algorithmSteps.steps.length === 0) return;
+      const step = algorithmSteps.steps[currentStep];
+      updateKpis(step);
+      updateBestSolution(step);
+      Plotly.react('graphView', buildGraph(step), {
+        title: `Iteration ${step.iterations}`,
+        xaxis: { title: 'x' },
+        yaxis: { title: 'y', scaleanchor: 'x', scaleratio: 1 },
+        margin: { l: 40, r: 20, t: 40, b: 35 },
+        paper_bgcolor: '#ffffff',
+        plot_bgcolor: '#ffffff',
+      }, { responsive: true, displayModeBar: false });
+      updateTrendChart();
+      updateOutcome(step);
+      updateDecisionLog();
+      document.getElementById('stepSlider').max = algorithmSteps.total_steps - 1;
+      document.getElementById('stepSlider').value = currentStep;
+    }
+
+    function playAnimation() {
+      isPlaying = true;
+      document.getElementById('playBtn').disabled = true;
+      document.getElementById('pauseBtn').disabled = false;
+      animateStep();
+    }
+
+    function pauseAnimation() {
+      isPlaying = false;
+      document.getElementById('playBtn').disabled = false;
+      document.getElementById('pauseBtn').disabled = true;
+      if (playTimeout) clearTimeout(playTimeout);
+    }
+
+    function resetAnimation() {
+      pauseAnimation();
+      currentStep = 0;
+      updateVisualization();
+    }
+
+    function animateStep() {
+      if (!isPlaying) return;
+      if (currentStep < algorithmSteps.total_steps - 1) {
+        currentStep += 1;
+        updateVisualization();
+        const speed = Number(document.getElementById('speedSlider').value);
+        const delay = Math.max(90, 1550 - speed);
+        playTimeout = setTimeout(animateStep, delay);
+      } else {
+        pauseAnimation();
+      }
+    }
+
+    function goToStep(step) {
+      currentStep = Number(step);
+      updateVisualization();
+    }
+
+    updateVisualization();
+  </script>
+</body>
+</html>

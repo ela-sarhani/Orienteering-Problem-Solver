@@ -1,0 +1,1754 @@
+{
+  "method": "grasp",
+  "feasible": true,
+  "route": [
+    0,
+    2,
+    4,
+    7,
+    6,
+    5,
+    3,
+    0
+  ],
+  "visited_nodes": [
+    2,
+    4,
+    7,
+    6,
+    5,
+    3
+  ],
+  "total_profit": 51.0,
+  "total_cost": 19.65973668286322,
+  "budget": 20.0,
+  "nodes_explored": 70,
+  "pruned_nodes": 2719,
+  "runtime_seconds": 0.111873,
+  "metadata": {
+    "algorithm": "grasp",
+    "state_history": {
+      "total_steps": 73,
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "initialize",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 0,
+          "candidate_evaluations": 0,
+          "decision_reason": "greedy incumbent initialized",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 45.0
+        },
+        {
+          "step_number": 2,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 1,
+          "candidate_evaluations": 42,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 45.0
+        },
+        {
+          "step_number": 3,
+          "action": "update_incumbent",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 1,
+          "candidate_evaluations": 42,
+          "decision_reason": "new best route found in GRASP iteration 1",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 4,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 2,
+          "candidate_evaluations": 84,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 5,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 3,
+          "candidate_evaluations": 125,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 6,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 4,
+          "candidate_evaluations": 167,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 7,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            4,
+            2,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 5,
+          "candidate_evaluations": 208,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 8,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 6,
+          "candidate_evaluations": 246,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 9,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 7,
+          "candidate_evaluations": 284,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 10,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 8,
+          "candidate_evaluations": 325,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 11,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 9,
+          "candidate_evaluations": 366,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 12,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 10,
+          "candidate_evaluations": 404,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 13,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 51.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 11,
+          "candidate_evaluations": 445,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 49.0
+        },
+        {
+          "step_number": 14,
+          "action": "update_incumbent",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 51.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 11,
+          "candidate_evaluations": 445,
+          "decision_reason": "new best route found in GRASP iteration 11",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 15,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 12,
+          "candidate_evaluations": 486,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 16,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 13,
+          "candidate_evaluations": 522,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 17,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 14,
+          "candidate_evaluations": 560,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 18,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 15,
+          "candidate_evaluations": 596,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 19,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            4,
+            2,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 16,
+          "candidate_evaluations": 637,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 20,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 17,
+          "candidate_evaluations": 678,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 21,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 18,
+          "candidate_evaluations": 719,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 22,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 19,
+          "candidate_evaluations": 757,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 23,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 20,
+          "candidate_evaluations": 798,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 24,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 21,
+          "candidate_evaluations": 840,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 25,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 22,
+          "candidate_evaluations": 881,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 26,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 23,
+          "candidate_evaluations": 922,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 27,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            4,
+            2,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 24,
+          "candidate_evaluations": 963,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 28,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 25,
+          "candidate_evaluations": 999,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 29,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 26,
+          "candidate_evaluations": 1041,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 30,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 27,
+          "candidate_evaluations": 1082,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 31,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 28,
+          "candidate_evaluations": 1123,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 32,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 29,
+          "candidate_evaluations": 1161,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 33,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 30,
+          "candidate_evaluations": 1202,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 34,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            4,
+            2,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 31,
+          "candidate_evaluations": 1243,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 35,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 32,
+          "candidate_evaluations": 1285,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 36,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 33,
+          "candidate_evaluations": 1323,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 37,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 34,
+          "candidate_evaluations": 1361,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 38,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 35,
+          "candidate_evaluations": 1399,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 39,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 51.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 36,
+          "candidate_evaluations": 1440,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 40,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            7,
+            4,
+            2,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 37,
+          "candidate_evaluations": 1482,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 41,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 38,
+          "candidate_evaluations": 1523,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 42,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 39,
+          "candidate_evaluations": 1561,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 43,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 40,
+          "candidate_evaluations": 1597,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 44,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 41,
+          "candidate_evaluations": 1638,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 45,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 42,
+          "candidate_evaluations": 1674,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 46,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 43,
+          "candidate_evaluations": 1715,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 47,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 44,
+          "candidate_evaluations": 1756,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 48,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 45,
+          "candidate_evaluations": 1797,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 49,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 46,
+          "candidate_evaluations": 1838,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 50,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 47,
+          "candidate_evaluations": 1874,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 51,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 48,
+          "candidate_evaluations": 1916,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 52,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            1,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 36.0,
+          "current_cost": 19.59524158061724,
+          "remaining_budget": 0.4047584193827589,
+          "iterations": 49,
+          "candidate_evaluations": 1956,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 53,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 50,
+          "candidate_evaluations": 1994,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 54,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 51,
+          "candidate_evaluations": 2032,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 55,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 52,
+          "candidate_evaluations": 2070,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 56,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            8,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 53,
+          "candidate_evaluations": 2108,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 57,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            8,
+            2,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 19.88062486640328,
+          "remaining_budget": 0.11937513359671925,
+          "iterations": 54,
+          "candidate_evaluations": 2146,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 58,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            4,
+            2,
+            1,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 55,
+          "candidate_evaluations": 2187,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 59,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 56,
+          "candidate_evaluations": 2223,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 60,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 57,
+          "candidate_evaluations": 2264,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 61,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 58,
+          "candidate_evaluations": 2306,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 62,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 59,
+          "candidate_evaluations": 2347,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 63,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 60,
+          "candidate_evaluations": 2388,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 64,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 61,
+          "candidate_evaluations": 2429,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 65,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            1,
+            4,
+            2,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.236916036149893,
+          "remaining_budget": 1.7630839638501072,
+          "iterations": 62,
+          "candidate_evaluations": 2465,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 66,
+          "action": "iteration",
+          "route": [
+            0,
+            3,
+            5,
+            6,
+            7,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 63,
+          "candidate_evaluations": 2506,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 67,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 64,
+          "candidate_evaluations": 2547,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 68,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            4,
+            7,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 48.0,
+          "current_cost": 19.190483161234482,
+          "remaining_budget": 0.8095168387655178,
+          "iterations": 65,
+          "candidate_evaluations": 2588,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 69,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            7,
+            6,
+            5,
+            1,
+            0
+          ],
+          "current_profit": 49.0,
+          "current_cost": 19.65973668286322,
+          "remaining_budget": 0.34026331713678104,
+          "iterations": 66,
+          "candidate_evaluations": 2630,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 70,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 67,
+          "candidate_evaluations": 2671,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 71,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "current_profit": 29.0,
+          "current_cost": 18.23691603614989,
+          "remaining_budget": 1.7630839638501108,
+          "iterations": 68,
+          "candidate_evaluations": 2707,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 72,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 69,
+          "candidate_evaluations": 2748,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        },
+        {
+          "step_number": 73,
+          "action": "iteration",
+          "route": [
+            0,
+            1,
+            2,
+            4,
+            6,
+            5,
+            3,
+            0
+          ],
+          "current_profit": 45.0,
+          "current_cost": 18.8220143430316,
+          "remaining_budget": 1.1779856569683993,
+          "iterations": 70,
+          "candidate_evaluations": 2789,
+          "decision_reason": "construction + local search with alpha=0.35",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 51.0
+        }
+      ]
+    }
+  },
+  "visualization": {
+    "name": "comparative_large_op",
+    "start": 0,
+    "budget": 20.0,
+    "route": [
+      0,
+      2,
+      4,
+      7,
+      6,
+      5,
+      3,
+      0
+    ],
+    "route_edges": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "route_points": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        4.0,
+        0.0
+      ],
+      [
+        6.0,
+        2.0
+      ],
+      [
+        7.0,
+        4.0
+      ],
+      [
+        5.0,
+        5.0
+      ],
+      [
+        3.0,
+        5.0
+      ],
+      [
+        1.0,
+        4.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "profit": 0.0,
+        "visited": false,
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "id": 1,
+        "profit": 5.0,
+        "visited": false,
+        "x": 2.0,
+        "y": 1.0
+      },
+      {
+        "id": 2,
+        "profit": 8.0,
+        "visited": true,
+        "x": 4.0,
+        "y": 0.0
+      },
+      {
+        "id": 3,
+        "profit": 7.0,
+        "visited": true,
+        "x": 1.0,
+        "y": 4.0
+      },
+      {
+        "id": 4,
+        "profit": 9.0,
+        "visited": true,
+        "x": 6.0,
+        "y": 2.0
+      },
+      {
+        "id": 5,
+        "profit": 6.0,
+        "visited": true,
+        "x": 3.0,
+        "y": 5.0
+      },
+      {
+        "id": 6,
+        "profit": 10.0,
+        "visited": true,
+        "x": 5.0,
+        "y": 5.0
+      },
+      {
+        "id": 7,
+        "profit": 11.0,
+        "visited": true,
+        "x": 7.0,
+        "y": 4.0
+      },
+      {
+        "id": 8,
+        "profit": 12.0,
+        "visited": false,
+        "x": 8.0,
+        "y": 1.0
+      }
+    ],
+    "route_cost": 19.65973668286322,
+    "route_profit": 51.0,
+    "has_coordinates": true
+  }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orienteering Problem Viewer Hub</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --panel: #ffffff;
+      --ink: #13283a;
+      --muted: #5d7183;
+      --accent: #0a6db8;
+      --accent-2: #1b9a59;
+      --border: rgba(19, 40, 58, 0.12);
+      --shadow: 0 18px 40px rgba(19, 40, 58, 0.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Segoe UI, Arial, sans-serif; color: var(--ink); background: linear-gradient(180deg, #eaf1f8 0%, var(--bg) 24%, #f8fafc 100%); }
+    .shell { max-width: 1500px; margin: 0 auto; padding: 24px; }
+    .hero { background: rgba(255,255,255,0.88); border: 1px solid var(--border); border-radius: 24px; padding: 24px; box-shadow: var(--shadow); }
+    .hero h1 { margin: 0 0 10px; font-size: 34px; }
+    .hero p { margin: 0; max-width: 920px; color: var(--muted); line-height: 1.6; }
+    .section { margin-top: 24px; background: rgba(255,255,255,0.82); border: 1px solid var(--border); border-radius: 24px; padding: 22px; box-shadow: var(--shadow); }
+    .section h2 { margin: 0 0 10px; font-size: 24px; }
+    .section .description { margin: 0 0 18px; color: var(--muted); line-height: 1.55; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .viewer-card {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(19, 40, 58, 0.06);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .viewer-card:hover { transform: translateY(-2px); border-color: rgba(10, 109, 184, 0.40); box-shadow: 0 14px 30px rgba(19, 40, 58, 0.10); }
+    .viewer-card.active { border-color: rgba(10, 109, 184, 0.60); box-shadow: 0 0 0 3px rgba(10, 109, 184, 0.12), 0 14px 30px rgba(19, 40, 58, 0.10); }
+    .card-title { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+    .card-path { font-size: 12px; color: var(--muted); word-break: break-all; line-height: 1.4; }
+    .viewer-panel { margin-top: 24px; background: var(--panel); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; }
+    .viewer-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); }
+    .viewer-toolbar .label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .viewer-toolbar .current { font-weight: 700; font-size: 16px; }
+    .viewer-toolbar a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    iframe { width: 100%; height: 920px; border: 0; display: block; background: #fff; }
+    @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } iframe { height: 780px; } }
+    @media (max-width: 720px) { .shell { padding: 14px; } .grid { grid-template-columns: 1fr; } .viewer-toolbar { flex-direction: column; align-items: flex-start; } iframe { height: 680px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="hero">
+      <h1>Orienteering Problem Viewer Hub</h1>
+      <p>Scroll down to the exact or metaheuristic section, then choose an approach. The selected viewer loads below, so you keep one entry point for the whole project instead of separate launch pages per method.</p>
+    </div>
+
+    <div class="section" id="exact-approaches">
+      <h2>Exact Approaches</h2>
+      <p class="description">Choose one of the exact solvers to inspect its animation, best solution, and decision history.</p>
+      <div class="grid">
+        
+            <button class="viewer-card" type="button" data-viewer="branch_and_bound/example_op_solution_viewer.html">
+              <div class="card-title">Branch and Bound</div>
+              <div class="card-path">branch_and_bound/example_op_solution_viewer.html</div>
+            </button>
+            
+
+            <button class="viewer-card" type="button" data-viewer="branch_and_cut/example_op_solution_viewer.html">
+              <div class="card-title">Branch and Cut</div>
+              <div class="card-path">branch_and_cut/example_op_solution_viewer.html</div>
+            </button>
+            
+
+            <button class="viewer-card" type="button" data-viewer="dynamic_programming/example_op_solution_viewer.html">
+              <div class="card-title">Dynamic Programming</div>
+              <div class="card-path">dynamic_programming/example_op_solution_viewer.html</div>
+            </button>
+            
+      </div>
+    </div>
+
+    <div class="section" id="metaheuristic-approaches">
+      <h2>Metaheuristic Approaches</h2>
+      <p class="description">Choose one of the metaheuristics to inspect its progression and best-so-far route.</p>
+      <div class="grid">
+        
+            <button class="viewer-card" type="button" data-viewer="metaheuristics/genetic_algorithm/example_op_solution_viewer.html">
+              <div class="card-title">Genetic Algorithm</div>
+              <div class="card-path">metaheuristics/genetic_algorithm/example_op_solution_viewer.html</div>
+            </button>
+            
+
+            <button class="viewer-card" type="button" data-viewer="metaheuristics/tabu_search/example_op_solution_viewer.html">
+              <div class="card-title">Tabu Search</div>
+              <div class="card-path">metaheuristics/tabu_search/example_op_solution_viewer.html</div>
+            </button>
+            
+
+            <button class="viewer-card" type="button" data-viewer="metaheuristics/grasp/example_op_solution_viewer.html">
+              <div class="card-title">GRASP</div>
+              <div class="card-path">metaheuristics/grasp/example_op_solution_viewer.html</div>
+            </button>
+            
+      </div>
+    </div>
+
+    <div class="viewer-panel">
+      <div class="viewer-toolbar">
+        <div>
+          <div class="label">Selected Viewer</div>
+          <div class="current" id="currentViewerLabel">Branch and Bound</div>
+        </div>
+        <div><a id="openInNewTab" href="branch_and_bound/example_op_solution_viewer.html" target="_blank" rel="noreferrer">Open in new tab</a></div>
+      </div>
+      <iframe id="viewerFrame" src="branch_and_bound/example_op_solution_viewer.html" title="Approach viewer"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const viewerFrame = document.getElementById('viewerFrame');
+    const currentViewerLabel = document.getElementById('currentViewerLabel');
+    const openInNewTab = document.getElementById('openInNewTab');
+
+    function setViewer(label, path) {
+      currentViewerLabel.textContent = label;
+      viewerFrame.src = path;
+      openInNewTab.href = path;
+    }
+
+    document.querySelectorAll('.viewer-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.viewer-card').forEach((node) => node.classList.remove('active'));
+        card.classList.add('active');
+        setViewer(card.querySelector('.card-title').textContent, card.dataset.viewer);
+      });
+    });
+
+    const firstCard = document.querySelector('.viewer-card');
+    if (firstCard) firstCard.classList.add('active');
+  </script>
+</body>
+</html>

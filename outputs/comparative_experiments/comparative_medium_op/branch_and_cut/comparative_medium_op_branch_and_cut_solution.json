@@ -1,0 +1,6353 @@
+{
+  "method": "branch_and_cut",
+  "feasible": true,
+  "route": [
+    0,
+    1,
+    2,
+    4,
+    7,
+    0
+  ],
+  "visited_nodes": [
+    1,
+    2,
+    4,
+    7
+  ],
+  "total_profit": 33.0,
+  "total_cost": 17.598888805544107,
+  "budget": 18.0,
+  "nodes_explored": 192,
+  "pruned_nodes": 154,
+  "runtime_seconds": 0.0039,
+  "metadata": {
+    "incumbent_source": "greedy",
+    "algorithm": "branch_and_cut_with_constraints",
+    "state_history": {
+      "total_steps": 345,
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "add_node",
+          "route": [
+            0,
+            7
+          ],
+          "current_profit": 11.0,
+          "current_cost": 8.06225774829855,
+          "remaining_budget": 9.93774225170145,
+          "nodes_explored": 1,
+          "nodes_pruned": 0,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=8.06)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 2,
+          "action": "add_node",
+          "route": [
+            0,
+            7,
+            6
+          ],
+          "current_profit": 21.0,
+          "current_cost": 10.298325725798339,
+          "remaining_budget": 7.701674274201661,
+          "nodes_explored": 2,
+          "nodes_pruned": 0,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 3,
+          "action": "prune",
+          "route": [
+            0,
+            7,
+            6
+          ],
+          "current_profit": 21.0,
+          "current_cost": 10.298325725798339,
+          "remaining_budget": 7.701674274201661,
+          "nodes_explored": 3,
+          "nodes_pruned": 1,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 4,
+          "action": "add_node",
+          "route": [
+            0,
+            7,
+            4
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.298325725798339,
+          "remaining_budget": 7.701674274201661,
+          "nodes_explored": 3,
+          "nodes_pruned": 1,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 5,
+          "action": "prune",
+          "route": [
+            0,
+            7,
+            4
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.298325725798339,
+          "remaining_budget": 7.701674274201661,
+          "nodes_explored": 4,
+          "nodes_pruned": 2,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 6,
+          "action": "add_node",
+          "route": [
+            0,
+            7,
+            2
+          ],
+          "current_profit": 19.0,
+          "current_cost": 13.06225774829855,
+          "remaining_budget": 4.937742251701451,
+          "nodes_explored": 4,
+          "nodes_pruned": 2,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 7,
+          "action": "prune",
+          "route": [
+            0,
+            7,
+            2
+          ],
+          "current_profit": 19.0,
+          "current_cost": 13.06225774829855,
+          "remaining_budget": 4.937742251701451,
+          "nodes_explored": 5,
+          "nodes_pruned": 3,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 8,
+          "action": "add_node",
+          "route": [
+            0,
+            7,
+            3
+          ],
+          "current_profit": 18.0,
+          "current_cost": 14.06225774829855,
+          "remaining_budget": 3.937742251701451,
+          "nodes_explored": 5,
+          "nodes_pruned": 3,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 9,
+          "action": "prune",
+          "route": [
+            0,
+            7,
+            3
+          ],
+          "current_profit": 18.0,
+          "current_cost": 14.06225774829855,
+          "remaining_budget": 3.937742251701451,
+          "nodes_explored": 6,
+          "nodes_pruned": 4,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 10,
+          "action": "add_node",
+          "route": [
+            0,
+            7,
+            5
+          ],
+          "current_profit": 17.0,
+          "current_cost": 12.18536337391621,
+          "remaining_budget": 5.814636626083789,
+          "nodes_explored": 6,
+          "nodes_pruned": 4,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 11,
+          "action": "prune",
+          "route": [
+            0,
+            7,
+            5
+          ],
+          "current_profit": 17.0,
+          "current_cost": 12.18536337391621,
+          "remaining_budget": 5.814636626083789,
+          "nodes_explored": 7,
+          "nodes_pruned": 5,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 12,
+          "action": "add_node",
+          "route": [
+            0,
+            7,
+            1
+          ],
+          "current_profit": 16.0,
+          "current_cost": 13.89320964314385,
+          "remaining_budget": 4.10679035685615,
+          "nodes_explored": 7,
+          "nodes_pruned": 5,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 13,
+          "action": "prune",
+          "route": [
+            0,
+            7,
+            1
+          ],
+          "current_profit": 16.0,
+          "current_cost": 13.89320964314385,
+          "remaining_budget": 4.10679035685615,
+          "nodes_explored": 8,
+          "nodes_pruned": 6,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 14,
+          "action": "add_node",
+          "route": [
+            0,
+            6
+          ],
+          "current_profit": 10.0,
+          "current_cost": 7.0710678118654755,
+          "remaining_budget": 10.928932188134524,
+          "nodes_explored": 8,
+          "nodes_pruned": 6,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=7.07)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 15,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            7
+          ],
+          "current_profit": 21.0,
+          "current_cost": 9.307135789365265,
+          "remaining_budget": 8.692864210634735,
+          "nodes_explored": 9,
+          "nodes_pruned": 6,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 16,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            7
+          ],
+          "current_profit": 21.0,
+          "current_cost": 9.307135789365265,
+          "remaining_budget": 8.692864210634735,
+          "nodes_explored": 10,
+          "nodes_pruned": 7,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 17,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            4
+          ],
+          "current_profit": 19.0,
+          "current_cost": 10.233345472033855,
+          "remaining_budget": 7.7666545279661445,
+          "nodes_explored": 10,
+          "nodes_pruned": 7,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 18,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            4
+          ],
+          "current_profit": 19.0,
+          "current_cost": 10.233345472033855,
+          "remaining_budget": 7.7666545279661445,
+          "nodes_explored": 11,
+          "nodes_pruned": 8,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 19,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            2
+          ],
+          "current_profit": 18.0,
+          "current_cost": 12.17008732545826,
+          "remaining_budget": 5.82991267454174,
+          "nodes_explored": 11,
+          "nodes_pruned": 8,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 20,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            2
+          ],
+          "current_profit": 18.0,
+          "current_cost": 12.17008732545826,
+          "remaining_budget": 5.82991267454174,
+          "nodes_explored": 12,
+          "nodes_pruned": 9,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 21,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            3
+          ],
+          "current_profit": 17.0,
+          "current_cost": 11.194173437483137,
+          "remaining_budget": 6.805826562516863,
+          "nodes_explored": 12,
+          "nodes_pruned": 9,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 22,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            3,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 17.194173437483137,
+          "remaining_budget": 0.805826562516863,
+          "nodes_explored": 13,
+          "nodes_pruned": 9,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 23,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            3,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 17.194173437483137,
+          "remaining_budget": 0.805826562516863,
+          "nodes_explored": 14,
+          "nodes_pruned": 10,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 24,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            3,
+            4
+          ],
+          "current_profit": 26.0,
+          "current_cost": 16.57933824461764,
+          "remaining_budget": 1.4206617553823584,
+          "nodes_explored": 14,
+          "nodes_pruned": 10,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 25,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            3,
+            4
+          ],
+          "current_profit": 26.0,
+          "current_cost": 16.57933824461764,
+          "remaining_budget": 1.4206617553823584,
+          "nodes_explored": 15,
+          "nodes_pruned": 11,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 26,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            3,
+            2
+          ],
+          "current_profit": 25.0,
+          "current_cost": 16.194173437483137,
+          "remaining_budget": 1.805826562516863,
+          "nodes_explored": 15,
+          "nodes_pruned": 11,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 27,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            3,
+            2
+          ],
+          "current_profit": 25.0,
+          "current_cost": 16.194173437483137,
+          "remaining_budget": 1.805826562516863,
+          "nodes_explored": 16,
+          "nodes_pruned": 12,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 28,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            3,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.430241414982927,
+          "remaining_budget": 4.569758585017073,
+          "nodes_explored": 16,
+          "nodes_pruned": 12,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 29,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            3,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.430241414982927,
+          "remaining_budget": 4.569758585017073,
+          "nodes_explored": 17,
+          "nodes_pruned": 13,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 30,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            3,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 14.356451097651517,
+          "remaining_budget": 3.643548902348483,
+          "nodes_explored": 17,
+          "nodes_pruned": 13,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 31,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            3,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 14.356451097651517,
+          "remaining_budget": 3.643548902348483,
+          "nodes_explored": 18,
+          "nodes_pruned": 14,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 32,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            5
+          ],
+          "current_profit": 16.0,
+          "current_cost": 9.071067811865476,
+          "remaining_budget": 8.928932188134524,
+          "nodes_explored": 18,
+          "nodes_pruned": 14,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 33,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            5,
+            7
+          ],
+          "current_profit": 27.0,
+          "current_cost": 13.194173437483137,
+          "remaining_budget": 4.805826562516863,
+          "nodes_explored": 19,
+          "nodes_pruned": 14,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 34,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            5,
+            7
+          ],
+          "current_profit": 27.0,
+          "current_cost": 13.194173437483137,
+          "remaining_budget": 4.805826562516863,
+          "nodes_explored": 20,
+          "nodes_pruned": 15,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 35,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            5,
+            4
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.31370849898476,
+          "remaining_budget": 4.686291501015241,
+          "nodes_explored": 20,
+          "nodes_pruned": 15,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 36,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            5,
+            4
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.31370849898476,
+          "remaining_budget": 4.686291501015241,
+          "nodes_explored": 21,
+          "nodes_pruned": 16,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 37,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            5,
+            2
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.17008732545826,
+          "remaining_budget": 3.82991267454174,
+          "nodes_explored": 21,
+          "nodes_pruned": 16,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 38,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            5,
+            2
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.17008732545826,
+          "remaining_budget": 3.82991267454174,
+          "nodes_explored": 22,
+          "nodes_pruned": 17,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 39,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            5,
+            3
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.307135789365265,
+          "remaining_budget": 6.692864210634735,
+          "nodes_explored": 22,
+          "nodes_pruned": 17,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 40,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            5,
+            3
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.307135789365265,
+          "remaining_budget": 6.692864210634735,
+          "nodes_explored": 23,
+          "nodes_pruned": 18,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 41,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            5,
+            1
+          ],
+          "current_profit": 21.0,
+          "current_cost": 13.194173437483137,
+          "remaining_budget": 4.805826562516863,
+          "nodes_explored": 23,
+          "nodes_pruned": 18,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 42,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            5,
+            1
+          ],
+          "current_profit": 21.0,
+          "current_cost": 13.194173437483137,
+          "remaining_budget": 4.805826562516863,
+          "nodes_explored": 24,
+          "nodes_pruned": 19,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 43,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            1
+          ],
+          "current_profit": 15.0,
+          "current_cost": 12.071067811865476,
+          "remaining_budget": 5.9289321881345245,
+          "nodes_explored": 24,
+          "nodes_pruned": 19,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 44,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            1,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 17.902019706710774,
+          "remaining_budget": 0.09798029328922553,
+          "nodes_explored": 25,
+          "nodes_pruned": 19,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 45,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            1,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 17.902019706710774,
+          "remaining_budget": 0.09798029328922553,
+          "nodes_explored": 26,
+          "nodes_pruned": 20,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 46,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            1,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 16.194173437483137,
+          "remaining_budget": 1.805826562516863,
+          "nodes_explored": 26,
+          "nodes_pruned": 20,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 47,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            1,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 16.194173437483137,
+          "remaining_budget": 1.805826562516863,
+          "nodes_explored": 27,
+          "nodes_pruned": 21,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 48,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            1,
+            2
+          ],
+          "current_profit": 23.0,
+          "current_cost": 14.307135789365265,
+          "remaining_budget": 3.6928642106347347,
+          "nodes_explored": 27,
+          "nodes_pruned": 21,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 49,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            1,
+            2
+          ],
+          "current_profit": 23.0,
+          "current_cost": 14.307135789365265,
+          "remaining_budget": 3.6928642106347347,
+          "nodes_explored": 28,
+          "nodes_pruned": 22,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 50,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            1,
+            3
+          ],
+          "current_profit": 22.0,
+          "current_cost": 15.233345472033855,
+          "remaining_budget": 2.7666545279661445,
+          "nodes_explored": 28,
+          "nodes_pruned": 22,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 51,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            1,
+            3
+          ],
+          "current_profit": 22.0,
+          "current_cost": 15.233345472033855,
+          "remaining_budget": 2.7666545279661445,
+          "nodes_explored": 29,
+          "nodes_pruned": 23,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 52,
+          "action": "add_node",
+          "route": [
+            0,
+            6,
+            1,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 16.194173437483137,
+          "remaining_budget": 1.805826562516863,
+          "nodes_explored": 29,
+          "nodes_pruned": 23,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 53,
+          "action": "prune",
+          "route": [
+            0,
+            6,
+            1,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 16.194173437483137,
+          "remaining_budget": 1.805826562516863,
+          "nodes_explored": 30,
+          "nodes_pruned": 24,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 54,
+          "action": "add_node",
+          "route": [
+            0,
+            4
+          ],
+          "current_profit": 9.0,
+          "current_cost": 6.324555320336759,
+          "remaining_budget": 11.67544467966324,
+          "nodes_explored": 30,
+          "nodes_pruned": 24,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=6.32)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 55,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            7
+          ],
+          "current_profit": 20.0,
+          "current_cost": 8.56062329783655,
+          "remaining_budget": 9.43937670216345,
+          "nodes_explored": 31,
+          "nodes_pruned": 24,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 56,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            7
+          ],
+          "current_profit": 20.0,
+          "current_cost": 8.56062329783655,
+          "remaining_budget": 9.43937670216345,
+          "nodes_explored": 32,
+          "nodes_pruned": 25,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 57,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            6
+          ],
+          "current_profit": 19.0,
+          "current_cost": 9.486832980505138,
+          "remaining_budget": 8.513167019494862,
+          "nodes_explored": 32,
+          "nodes_pruned": 25,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 58,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            6
+          ],
+          "current_profit": 19.0,
+          "current_cost": 9.486832980505138,
+          "remaining_budget": 8.513167019494862,
+          "nodes_explored": 33,
+          "nodes_pruned": 26,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 59,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            2
+          ],
+          "current_profit": 17.0,
+          "current_cost": 9.15298244508295,
+          "remaining_budget": 8.84701755491705,
+          "nodes_explored": 33,
+          "nodes_pruned": 26,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 60,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            2,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 14.15298244508295,
+          "remaining_budget": 3.84701755491705,
+          "nodes_explored": 34,
+          "nodes_pruned": 26,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 61,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            2,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 14.15298244508295,
+          "remaining_budget": 3.84701755491705,
+          "nodes_explored": 35,
+          "nodes_pruned": 27,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 62,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            2,
+            6
+          ],
+          "current_profit": 27.0,
+          "current_cost": 14.252001958675734,
+          "remaining_budget": 3.7479980413242657,
+          "nodes_explored": 35,
+          "nodes_pruned": 27,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 63,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            2,
+            6
+          ],
+          "current_profit": 27.0,
+          "current_cost": 14.252001958675734,
+          "remaining_budget": 3.7479980413242657,
+          "nodes_explored": 36,
+          "nodes_pruned": 28,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 64,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            2,
+            3
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.15298244508295,
+          "remaining_budget": 3.84701755491705,
+          "nodes_explored": 36,
+          "nodes_pruned": 28,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 65,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            2,
+            3
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.15298244508295,
+          "remaining_budget": 3.84701755491705,
+          "nodes_explored": 37,
+          "nodes_pruned": 29,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 66,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            2,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 14.252001958675734,
+          "remaining_budget": 3.7479980413242657,
+          "nodes_explored": 37,
+          "nodes_pruned": 29,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 67,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            2,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 14.252001958675734,
+          "remaining_budget": 3.7479980413242657,
+          "nodes_explored": 38,
+          "nodes_pruned": 30,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 68,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            2,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 11.38905042258274,
+          "remaining_budget": 6.61094957741726,
+          "nodes_explored": 38,
+          "nodes_pruned": 30,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 69,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            2,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 11.38905042258274,
+          "remaining_budget": 6.61094957741726,
+          "nodes_explored": 39,
+          "nodes_pruned": 31,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 70,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            3
+          ],
+          "current_profit": 16.0,
+          "current_cost": 11.709720127471263,
+          "remaining_budget": 6.290279872528737,
+          "nodes_explored": 39,
+          "nodes_pruned": 31,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 71,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            3
+          ],
+          "current_profit": 16.0,
+          "current_cost": 11.709720127471263,
+          "remaining_budget": 6.290279872528737,
+          "nodes_explored": 40,
+          "nodes_pruned": 32,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 72,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            5
+          ],
+          "current_profit": 15.0,
+          "current_cost": 10.567196007456044,
+          "remaining_budget": 7.432803992543956,
+          "nodes_explored": 40,
+          "nodes_pruned": 32,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 73,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            5
+          ],
+          "current_profit": 15.0,
+          "current_cost": 10.567196007456044,
+          "remaining_budget": 7.432803992543956,
+          "nodes_explored": 41,
+          "nodes_pruned": 33,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 74,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            1
+          ],
+          "current_profit": 14.0,
+          "current_cost": 10.44766094595442,
+          "remaining_budget": 7.55233905404558,
+          "nodes_explored": 41,
+          "nodes_pruned": 33,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 75,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            1,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 16.27861284079972,
+          "remaining_budget": 1.7213871592002796,
+          "nodes_explored": 42,
+          "nodes_pruned": 33,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 76,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            1,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 16.27861284079972,
+          "remaining_budget": 1.7213871592002796,
+          "nodes_explored": 43,
+          "nodes_pruned": 34,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 77,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            1,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 15.44766094595442,
+          "remaining_budget": 2.5523390540455804,
+          "nodes_explored": 43,
+          "nodes_pruned": 34,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 78,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            1,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 15.44766094595442,
+          "remaining_budget": 2.5523390540455804,
+          "nodes_explored": 44,
+          "nodes_pruned": 35,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 79,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            1,
+            2
+          ],
+          "current_profit": 22.0,
+          "current_cost": 12.68372892345421,
+          "remaining_budget": 5.316271076545791,
+          "nodes_explored": 44,
+          "nodes_pruned": 35,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 80,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            1,
+            2
+          ],
+          "current_profit": 22.0,
+          "current_cost": 12.68372892345421,
+          "remaining_budget": 5.316271076545791,
+          "nodes_explored": 45,
+          "nodes_pruned": 36,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 81,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            1,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 13.6099386061228,
+          "remaining_budget": 4.3900613938772,
+          "nodes_explored": 45,
+          "nodes_pruned": 36,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 82,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            1,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 13.6099386061228,
+          "remaining_budget": 4.3900613938772,
+          "nodes_explored": 46,
+          "nodes_pruned": 37,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 83,
+          "action": "add_node",
+          "route": [
+            0,
+            4,
+            1,
+            5
+          ],
+          "current_profit": 20.0,
+          "current_cost": 14.57076657157208,
+          "remaining_budget": 3.4292334284279207,
+          "nodes_explored": 46,
+          "nodes_pruned": 37,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 84,
+          "action": "prune",
+          "route": [
+            0,
+            4,
+            1,
+            5
+          ],
+          "current_profit": 20.0,
+          "current_cost": 14.57076657157208,
+          "remaining_budget": 3.4292334284279207,
+          "nodes_explored": 47,
+          "nodes_pruned": 38,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 85,
+          "action": "add_node",
+          "route": [
+            0,
+            2
+          ],
+          "current_profit": 8.0,
+          "current_cost": 4.0,
+          "remaining_budget": 14.0,
+          "nodes_explored": 47,
+          "nodes_pruned": 38,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=4.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 86,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            7
+          ],
+          "current_profit": 19.0,
+          "current_cost": 9.0,
+          "remaining_budget": 9.0,
+          "nodes_explored": 48,
+          "nodes_pruned": 38,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 87,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            7
+          ],
+          "current_profit": 19.0,
+          "current_cost": 9.0,
+          "remaining_budget": 9.0,
+          "nodes_explored": 49,
+          "nodes_pruned": 39,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 88,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            6
+          ],
+          "current_profit": 18.0,
+          "current_cost": 9.099019513592784,
+          "remaining_budget": 8.900980486407216,
+          "nodes_explored": 49,
+          "nodes_pruned": 39,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 89,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            6
+          ],
+          "current_profit": 18.0,
+          "current_cost": 9.099019513592784,
+          "remaining_budget": 8.900980486407216,
+          "nodes_explored": 50,
+          "nodes_pruned": 40,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 90,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            4
+          ],
+          "current_profit": 17.0,
+          "current_cost": 6.82842712474619,
+          "remaining_budget": 11.17157287525381,
+          "nodes_explored": 50,
+          "nodes_pruned": 40,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 91,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            4,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 9.06449510224598,
+          "remaining_budget": 8.93550489775402,
+          "nodes_explored": 51,
+          "nodes_pruned": 40,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 92,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            4,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 9.06449510224598,
+          "remaining_budget": 8.93550489775402,
+          "nodes_explored": 52,
+          "nodes_pruned": 41,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 93,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "current_profit": 27.0,
+          "current_cost": 9.99070478491457,
+          "remaining_budget": 8.00929521508543,
+          "nodes_explored": 52,
+          "nodes_pruned": 41,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 94,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "current_profit": 27.0,
+          "current_cost": 9.99070478491457,
+          "remaining_budget": 8.00929521508543,
+          "nodes_explored": 53,
+          "nodes_pruned": 42,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 95,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "current_profit": 24.0,
+          "current_cost": 12.213591931880693,
+          "remaining_budget": 5.786408068119307,
+          "nodes_explored": 53,
+          "nodes_pruned": 42,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 96,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            4,
+            3
+          ],
+          "current_profit": 24.0,
+          "current_cost": 12.213591931880693,
+          "remaining_budget": 5.786408068119307,
+          "nodes_explored": 54,
+          "nodes_pruned": 43,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 97,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.071067811865476,
+          "remaining_budget": 6.9289321881345245,
+          "nodes_explored": 54,
+          "nodes_pruned": 43,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 98,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.071067811865476,
+          "remaining_budget": 6.9289321881345245,
+          "nodes_explored": 55,
+          "nodes_pruned": 44,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 99,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            4,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.95153275036385,
+          "remaining_budget": 7.0484672496361505,
+          "nodes_explored": 55,
+          "nodes_pruned": 44,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 100,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            4,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.95153275036385,
+          "remaining_budget": 7.0484672496361505,
+          "nodes_explored": 56,
+          "nodes_pruned": 45,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 101,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            3
+          ],
+          "current_profit": 15.0,
+          "current_cost": 9.0,
+          "remaining_budget": 9.0,
+          "nodes_explored": 56,
+          "nodes_pruned": 45,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 102,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            3,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 15.0,
+          "remaining_budget": 3.0,
+          "nodes_explored": 57,
+          "nodes_pruned": 45,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 103,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            3,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 15.0,
+          "remaining_budget": 3.0,
+          "nodes_explored": 58,
+          "nodes_pruned": 46,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 104,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            3,
+            6
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.123105625617661,
+          "remaining_budget": 4.8768943743823385,
+          "nodes_explored": 58,
+          "nodes_pruned": 46,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 105,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            3,
+            6
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.123105625617661,
+          "remaining_budget": 4.8768943743823385,
+          "nodes_explored": 59,
+          "nodes_pruned": 47,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 106,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            3,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.385164807134505,
+          "remaining_budget": 3.6148351928654954,
+          "nodes_explored": 59,
+          "nodes_pruned": 47,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 107,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            3,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.385164807134505,
+          "remaining_budget": 3.6148351928654954,
+          "nodes_explored": 60,
+          "nodes_pruned": 48,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 108,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.23606797749979,
+          "remaining_budget": 6.76393202250021,
+          "nodes_explored": 60,
+          "nodes_pruned": 48,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 109,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.23606797749979,
+          "remaining_budget": 6.76393202250021,
+          "nodes_explored": 61,
+          "nodes_pruned": 49,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 110,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "current_profit": 20.0,
+          "current_cost": 12.16227766016838,
+          "remaining_budget": 5.83772233983162,
+          "nodes_explored": 61,
+          "nodes_pruned": 49,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 111,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "current_profit": 20.0,
+          "current_cost": 12.16227766016838,
+          "remaining_budget": 5.83772233983162,
+          "nodes_explored": 62,
+          "nodes_pruned": 50,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 112,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            5
+          ],
+          "current_profit": 14.0,
+          "current_cost": 9.099019513592784,
+          "remaining_budget": 8.900980486407216,
+          "nodes_explored": 62,
+          "nodes_pruned": 50,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 113,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.222125139210444,
+          "remaining_budget": 4.777874860789556,
+          "nodes_explored": 63,
+          "nodes_pruned": 50,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 114,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.222125139210444,
+          "remaining_budget": 4.777874860789556,
+          "nodes_explored": 64,
+          "nodes_pruned": 51,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 115,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            5,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 11.099019513592784,
+          "remaining_budget": 6.9009804864072155,
+          "nodes_explored": 64,
+          "nodes_pruned": 51,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 116,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            5,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 11.099019513592784,
+          "remaining_budget": 6.9009804864072155,
+          "nodes_explored": 65,
+          "nodes_pruned": 52,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 117,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            5,
+            4
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.34166020071207,
+          "remaining_budget": 4.65833979928793,
+          "nodes_explored": 65,
+          "nodes_pruned": 52,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 118,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            5,
+            4
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.34166020071207,
+          "remaining_budget": 4.65833979928793,
+          "nodes_explored": 66,
+          "nodes_pruned": 53,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 119,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            5,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.335087491092574,
+          "remaining_budget": 6.664912508907426,
+          "nodes_explored": 66,
+          "nodes_pruned": 53,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 120,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            5,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.335087491092574,
+          "remaining_budget": 6.664912508907426,
+          "nodes_explored": 67,
+          "nodes_pruned": 54,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 121,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            5,
+            1
+          ],
+          "current_profit": 19.0,
+          "current_cost": 13.222125139210444,
+          "remaining_budget": 4.777874860789556,
+          "nodes_explored": 67,
+          "nodes_pruned": 54,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 122,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            5,
+            1
+          ],
+          "current_profit": 19.0,
+          "current_cost": 13.222125139210444,
+          "remaining_budget": 4.777874860789556,
+          "nodes_explored": 68,
+          "nodes_pruned": 55,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 123,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1
+          ],
+          "current_profit": 13.0,
+          "current_cost": 6.23606797749979,
+          "remaining_budget": 11.76393202250021,
+          "nodes_explored": 68,
+          "nodes_pruned": 55,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 124,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 12.06701987234509,
+          "remaining_budget": 5.9329801276549095,
+          "nodes_explored": 69,
+          "nodes_pruned": 55,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 125,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 12.06701987234509,
+          "remaining_budget": 5.9329801276549095,
+          "nodes_explored": 70,
+          "nodes_pruned": 56,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 126,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.23606797749979,
+          "remaining_budget": 6.76393202250021,
+          "nodes_explored": 70,
+          "nodes_pruned": 56,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 127,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.23606797749979,
+          "remaining_budget": 6.76393202250021,
+          "nodes_explored": 71,
+          "nodes_pruned": 57,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 128,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.359173603117451,
+          "remaining_budget": 7.640826396882549,
+          "nodes_explored": 71,
+          "nodes_pruned": 57,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 129,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.359173603117451,
+          "remaining_budget": 7.640826396882549,
+          "nodes_explored": 72,
+          "nodes_pruned": 58,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 130,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "current_profit": 20.0,
+          "current_cost": 9.39834563766817,
+          "remaining_budget": 8.60165436233183,
+          "nodes_explored": 72,
+          "nodes_pruned": 58,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 131,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 15.39834563766817,
+          "remaining_budget": 2.6016543623318302,
+          "nodes_explored": 73,
+          "nodes_pruned": 58,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 132,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 15.39834563766817,
+          "remaining_budget": 2.6016543623318302,
+          "nodes_explored": 74,
+          "nodes_pruned": 59,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 133,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 13.52145126328583,
+          "remaining_budget": 4.4785487367141705,
+          "nodes_explored": 74,
+          "nodes_pruned": 59,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 134,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 13.52145126328583,
+          "remaining_budget": 4.4785487367141705,
+          "nodes_explored": 75,
+          "nodes_pruned": 60,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 135,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 14.783510444802673,
+          "remaining_budget": 3.2164895551973274,
+          "nodes_explored": 75,
+          "nodes_pruned": 60,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 136,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 14.783510444802673,
+          "remaining_budget": 3.2164895551973274,
+          "nodes_explored": 76,
+          "nodes_pruned": 61,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 137,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 11.63441361516796,
+          "remaining_budget": 6.36558638483204,
+          "nodes_explored": 76,
+          "nodes_pruned": 61,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 138,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            3,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 11.63441361516796,
+          "remaining_budget": 6.36558638483204,
+          "nodes_explored": 77,
+          "nodes_pruned": 62,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 139,
+          "action": "add_node",
+          "route": [
+            0,
+            2,
+            1,
+            5
+          ],
+          "current_profit": 19.0,
+          "current_cost": 10.359173603117451,
+          "remaining_budget": 7.640826396882549,
+          "nodes_explored": 77,
+          "nodes_pruned": 62,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 140,
+          "action": "prune",
+          "route": [
+            0,
+            2,
+            1,
+            5
+          ],
+          "current_profit": 19.0,
+          "current_cost": 10.359173603117451,
+          "remaining_budget": 7.640826396882549,
+          "nodes_explored": 78,
+          "nodes_pruned": 63,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 141,
+          "action": "add_node",
+          "route": [
+            0,
+            3
+          ],
+          "current_profit": 7.0,
+          "current_cost": 4.123105625617661,
+          "remaining_budget": 13.876894374382339,
+          "nodes_explored": 78,
+          "nodes_pruned": 63,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 142,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            7
+          ],
+          "current_profit": 18.0,
+          "current_cost": 10.123105625617661,
+          "remaining_budget": 7.8768943743823385,
+          "nodes_explored": 79,
+          "nodes_pruned": 63,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 143,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            7
+          ],
+          "current_profit": 18.0,
+          "current_cost": 10.123105625617661,
+          "remaining_budget": 7.8768943743823385,
+          "nodes_explored": 80,
+          "nodes_pruned": 64,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 144,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            6
+          ],
+          "current_profit": 17.0,
+          "current_cost": 8.246211251235321,
+          "remaining_budget": 9.753788748764679,
+          "nodes_explored": 80,
+          "nodes_pruned": 64,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 145,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            6,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 81,
+          "nodes_pruned": 64,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 146,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            6,
+            7
+          ],
+          "current_profit": 28.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 82,
+          "nodes_pruned": 65,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 147,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            6,
+            4
+          ],
+          "current_profit": 26.0,
+          "current_cost": 11.408488911403701,
+          "remaining_budget": 6.591511088596299,
+          "nodes_explored": 82,
+          "nodes_pruned": 65,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 148,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            6,
+            4
+          ],
+          "current_profit": 26.0,
+          "current_cost": 11.408488911403701,
+          "remaining_budget": 6.591511088596299,
+          "nodes_explored": 83,
+          "nodes_pruned": 66,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 149,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            6,
+            2
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.345230764828106,
+          "remaining_budget": 4.654769235171894,
+          "nodes_explored": 83,
+          "nodes_pruned": 66,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 150,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            6,
+            2
+          ],
+          "current_profit": 25.0,
+          "current_cost": 13.345230764828106,
+          "remaining_budget": 4.654769235171894,
+          "nodes_explored": 84,
+          "nodes_pruned": 67,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 151,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            6,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 10.246211251235321,
+          "remaining_budget": 7.753788748764679,
+          "nodes_explored": 84,
+          "nodes_pruned": 67,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 152,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            6,
+            5
+          ],
+          "current_profit": 23.0,
+          "current_cost": 10.246211251235321,
+          "remaining_budget": 7.753788748764679,
+          "nodes_explored": 85,
+          "nodes_pruned": 68,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 153,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            6,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 13.246211251235321,
+          "remaining_budget": 4.753788748764679,
+          "nodes_explored": 85,
+          "nodes_pruned": 68,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 154,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            6,
+            1
+          ],
+          "current_profit": 22.0,
+          "current_cost": 13.246211251235321,
+          "remaining_budget": 4.753788748764679,
+          "nodes_explored": 86,
+          "nodes_pruned": 69,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 155,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            4
+          ],
+          "current_profit": 16.0,
+          "current_cost": 9.508270432752164,
+          "remaining_budget": 8.491729567247836,
+          "nodes_explored": 86,
+          "nodes_pruned": 69,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 156,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            4
+          ],
+          "current_profit": 16.0,
+          "current_cost": 9.508270432752164,
+          "remaining_budget": 8.491729567247836,
+          "nodes_explored": 87,
+          "nodes_pruned": 70,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 157,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2
+          ],
+          "current_profit": 15.0,
+          "current_cost": 9.123105625617661,
+          "remaining_budget": 8.876894374382339,
+          "nodes_explored": 87,
+          "nodes_pruned": 70,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 158,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 14.123105625617661,
+          "remaining_budget": 3.8768943743823385,
+          "nodes_explored": 88,
+          "nodes_pruned": 70,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 159,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 14.123105625617661,
+          "remaining_budget": 3.8768943743823385,
+          "nodes_explored": 89,
+          "nodes_pruned": 71,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 160,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            6
+          ],
+          "current_profit": 25.0,
+          "current_cost": 14.222125139210446,
+          "remaining_budget": 3.777874860789554,
+          "nodes_explored": 89,
+          "nodes_pruned": 71,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 161,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            6
+          ],
+          "current_profit": 25.0,
+          "current_cost": 14.222125139210446,
+          "remaining_budget": 3.777874860789554,
+          "nodes_explored": 90,
+          "nodes_pruned": 72,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 162,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 11.951532750363851,
+          "remaining_budget": 6.048467249636149,
+          "nodes_explored": 90,
+          "nodes_pruned": 72,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 163,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 11.951532750363851,
+          "remaining_budget": 6.048467249636149,
+          "nodes_explored": 91,
+          "nodes_pruned": 73,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 164,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 14.222125139210446,
+          "remaining_budget": 3.777874860789554,
+          "nodes_explored": 91,
+          "nodes_pruned": 73,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 165,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 14.222125139210446,
+          "remaining_budget": 3.777874860789554,
+          "nodes_explored": 92,
+          "nodes_pruned": 74,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 166,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "current_profit": 20.0,
+          "current_cost": 11.359173603117451,
+          "remaining_budget": 6.640826396882549,
+          "nodes_explored": 92,
+          "nodes_pruned": 74,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 167,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 17.190125497962754,
+          "remaining_budget": 0.8098745020372462,
+          "nodes_explored": 93,
+          "nodes_pruned": 74,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 168,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 17.190125497962754,
+          "remaining_budget": 0.8098745020372462,
+          "nodes_explored": 94,
+          "nodes_pruned": 75,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 169,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 16.35917360311745,
+          "remaining_budget": 1.6408263968825487,
+          "nodes_explored": 94,
+          "nodes_pruned": 75,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 170,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 16.35917360311745,
+          "remaining_budget": 1.6408263968825487,
+          "nodes_explored": 95,
+          "nodes_pruned": 76,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 171,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 15.482279228735113,
+          "remaining_budget": 2.5177207712648872,
+          "nodes_explored": 95,
+          "nodes_pruned": 76,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 172,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 15.482279228735113,
+          "remaining_budget": 2.5177207712648872,
+          "nodes_explored": 96,
+          "nodes_pruned": 77,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 173,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 15.482279228735113,
+          "remaining_budget": 2.5177207712648872,
+          "nodes_explored": 96,
+          "nodes_pruned": 77,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 174,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            2,
+            1,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 15.482279228735113,
+          "remaining_budget": 2.5177207712648872,
+          "nodes_explored": 97,
+          "nodes_pruned": 78,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 175,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            5
+          ],
+          "current_profit": 13.0,
+          "current_cost": 6.35917360311745,
+          "remaining_budget": 11.640826396882549,
+          "nodes_explored": 97,
+          "nodes_pruned": 78,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 176,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            5,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 98,
+          "nodes_pruned": 78,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 177,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            5,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 99,
+          "nodes_pruned": 79,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 178,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 8.359173603117451,
+          "remaining_budget": 9.640826396882549,
+          "nodes_explored": 99,
+          "nodes_pruned": 79,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 179,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 8.359173603117451,
+          "remaining_budget": 9.640826396882549,
+          "nodes_explored": 100,
+          "nodes_pruned": 80,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 180,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            5,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.601814290236735,
+          "remaining_budget": 7.398185709763265,
+          "nodes_explored": 100,
+          "nodes_pruned": 80,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 181,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            5,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.601814290236735,
+          "remaining_budget": 7.398185709763265,
+          "nodes_explored": 101,
+          "nodes_pruned": 81,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 182,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            5,
+            2
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.458193116710234,
+          "remaining_budget": 6.541806883289766,
+          "nodes_explored": 101,
+          "nodes_pruned": 81,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 183,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            5,
+            2
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.458193116710234,
+          "remaining_budget": 6.541806883289766,
+          "nodes_explored": 102,
+          "nodes_pruned": 82,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 184,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            5,
+            1
+          ],
+          "current_profit": 18.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 102,
+          "nodes_pruned": 82,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 185,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            5,
+            1
+          ],
+          "current_profit": 18.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 103,
+          "nodes_pruned": 83,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 186,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1
+          ],
+          "current_profit": 12.0,
+          "current_cost": 7.28538328578604,
+          "remaining_budget": 10.71461671421396,
+          "nodes_explored": 103,
+          "nodes_pruned": 83,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 187,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            7
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.11633518063134,
+          "remaining_budget": 4.88366481936866,
+          "nodes_explored": 104,
+          "nodes_pruned": 83,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 188,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            7
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.11633518063134,
+          "remaining_budget": 4.88366481936866,
+          "nodes_explored": 105,
+          "nodes_pruned": 84,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 189,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            6
+          ],
+          "current_profit": 22.0,
+          "current_cost": 12.28538328578604,
+          "remaining_budget": 5.71461671421396,
+          "nodes_explored": 105,
+          "nodes_pruned": 84,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 190,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            6
+          ],
+          "current_profit": 22.0,
+          "current_cost": 12.28538328578604,
+          "remaining_budget": 5.71461671421396,
+          "nodes_explored": 106,
+          "nodes_pruned": 85,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 191,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            4
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.408488911403701,
+          "remaining_budget": 6.591511088596299,
+          "nodes_explored": 106,
+          "nodes_pruned": 85,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 192,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            4
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.408488911403701,
+          "remaining_budget": 6.591511088596299,
+          "nodes_explored": 107,
+          "nodes_pruned": 86,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 193,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "current_profit": 20.0,
+          "current_cost": 9.52145126328583,
+          "remaining_budget": 8.47854873671417,
+          "nodes_explored": 107,
+          "nodes_pruned": 86,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 194,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 14.52145126328583,
+          "remaining_budget": 3.4785487367141705,
+          "nodes_explored": 108,
+          "nodes_pruned": 86,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 195,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 14.52145126328583,
+          "remaining_budget": 3.4785487367141705,
+          "nodes_explored": 109,
+          "nodes_pruned": 87,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 196,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 14.620470776878614,
+          "remaining_budget": 3.379529223121386,
+          "nodes_explored": 109,
+          "nodes_pruned": 87,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 197,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 14.620470776878614,
+          "remaining_budget": 3.379529223121386,
+          "nodes_explored": 110,
+          "nodes_pruned": 88,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 198,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 12.34987838803202,
+          "remaining_budget": 5.650121611967981,
+          "nodes_explored": 110,
+          "nodes_pruned": 88,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 199,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 12.34987838803202,
+          "remaining_budget": 5.650121611967981,
+          "nodes_explored": 111,
+          "nodes_pruned": 89,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 200,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 14.620470776878614,
+          "remaining_budget": 3.379529223121386,
+          "nodes_explored": 111,
+          "nodes_pruned": 89,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 201,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            2,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 14.620470776878614,
+          "remaining_budget": 3.379529223121386,
+          "nodes_explored": 112,
+          "nodes_pruned": 90,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 202,
+          "action": "add_node",
+          "route": [
+            0,
+            3,
+            1,
+            5
+          ],
+          "current_profit": 18.0,
+          "current_cost": 11.408488911403701,
+          "remaining_budget": 6.591511088596299,
+          "nodes_explored": 112,
+          "nodes_pruned": 90,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 203,
+          "action": "prune",
+          "route": [
+            0,
+            3,
+            1,
+            5
+          ],
+          "current_profit": 18.0,
+          "current_cost": 11.408488911403701,
+          "remaining_budget": 6.591511088596299,
+          "nodes_explored": 113,
+          "nodes_pruned": 91,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 204,
+          "action": "add_node",
+          "route": [
+            0,
+            5
+          ],
+          "current_profit": 6.0,
+          "current_cost": 5.830951894845301,
+          "remaining_budget": 12.1690481051547,
+          "nodes_explored": 113,
+          "nodes_pruned": 91,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 205,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            7
+          ],
+          "current_profit": 17.0,
+          "current_cost": 9.95405752046296,
+          "remaining_budget": 8.04594247953704,
+          "nodes_explored": 114,
+          "nodes_pruned": 91,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 206,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            7
+          ],
+          "current_profit": 17.0,
+          "current_cost": 9.95405752046296,
+          "remaining_budget": 8.04594247953704,
+          "nodes_explored": 115,
+          "nodes_pruned": 92,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 207,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            6
+          ],
+          "current_profit": 16.0,
+          "current_cost": 7.830951894845301,
+          "remaining_budget": 10.1690481051547,
+          "nodes_explored": 115,
+          "nodes_pruned": 92,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 208,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            6,
+            7
+          ],
+          "current_profit": 27.0,
+          "current_cost": 10.06701987234509,
+          "remaining_budget": 7.9329801276549095,
+          "nodes_explored": 116,
+          "nodes_pruned": 92,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 209,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            6,
+            7
+          ],
+          "current_profit": 27.0,
+          "current_cost": 10.06701987234509,
+          "remaining_budget": 7.9329801276549095,
+          "nodes_explored": 117,
+          "nodes_pruned": 93,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 210,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            6,
+            4
+          ],
+          "current_profit": 25.0,
+          "current_cost": 10.99322955501368,
+          "remaining_budget": 7.006770444986319,
+          "nodes_explored": 117,
+          "nodes_pruned": 93,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 211,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            6,
+            4
+          ],
+          "current_profit": 25.0,
+          "current_cost": 10.99322955501368,
+          "remaining_budget": 7.006770444986319,
+          "nodes_explored": 118,
+          "nodes_pruned": 94,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 212,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            6,
+            2
+          ],
+          "current_profit": 24.0,
+          "current_cost": 12.929971408438085,
+          "remaining_budget": 5.070028591561915,
+          "nodes_explored": 118,
+          "nodes_pruned": 94,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 213,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            6,
+            2
+          ],
+          "current_profit": 24.0,
+          "current_cost": 12.929971408438085,
+          "remaining_budget": 5.070028591561915,
+          "nodes_explored": 119,
+          "nodes_pruned": 95,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 214,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            6,
+            3
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.95405752046296,
+          "remaining_budget": 6.04594247953704,
+          "nodes_explored": 119,
+          "nodes_pruned": 95,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 215,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            6,
+            3
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.95405752046296,
+          "remaining_budget": 6.04594247953704,
+          "nodes_explored": 120,
+          "nodes_pruned": 96,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 216,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            6,
+            1
+          ],
+          "current_profit": 21.0,
+          "current_cost": 12.8309518948453,
+          "remaining_budget": 5.169048105154699,
+          "nodes_explored": 120,
+          "nodes_pruned": 96,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 217,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            6,
+            1
+          ],
+          "current_profit": 21.0,
+          "current_cost": 12.8309518948453,
+          "remaining_budget": 5.169048105154699,
+          "nodes_explored": 121,
+          "nodes_pruned": 97,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 218,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            4
+          ],
+          "current_profit": 15.0,
+          "current_cost": 10.073592581964586,
+          "remaining_budget": 7.926407418035414,
+          "nodes_explored": 121,
+          "nodes_pruned": 97,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 219,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            4
+          ],
+          "current_profit": 15.0,
+          "current_cost": 10.073592581964586,
+          "remaining_budget": 7.926407418035414,
+          "nodes_explored": 122,
+          "nodes_pruned": 98,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 220,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            2
+          ],
+          "current_profit": 14.0,
+          "current_cost": 10.929971408438085,
+          "remaining_budget": 7.070028591561915,
+          "nodes_explored": 122,
+          "nodes_pruned": 98,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 221,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            2,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 15.929971408438085,
+          "remaining_budget": 2.0700285915619148,
+          "nodes_explored": 123,
+          "nodes_pruned": 98,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 222,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            2,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 15.929971408438085,
+          "remaining_budget": 2.0700285915619148,
+          "nodes_explored": 124,
+          "nodes_pruned": 99,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 223,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            2,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 16.02899092203087,
+          "remaining_budget": 1.9710090779691285,
+          "nodes_explored": 124,
+          "nodes_pruned": 99,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 224,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            2,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 16.02899092203087,
+          "remaining_budget": 1.9710090779691285,
+          "nodes_explored": 125,
+          "nodes_pruned": 100,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 225,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            2,
+            4
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.758398533184275,
+          "remaining_budget": 4.241601466815725,
+          "nodes_explored": 125,
+          "nodes_pruned": 100,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 226,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            2,
+            4
+          ],
+          "current_profit": 23.0,
+          "current_cost": 13.758398533184275,
+          "remaining_budget": 4.241601466815725,
+          "nodes_explored": 126,
+          "nodes_pruned": 101,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 227,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            2,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 15.929971408438085,
+          "remaining_budget": 2.0700285915619148,
+          "nodes_explored": 126,
+          "nodes_pruned": 101,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 228,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            2,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 15.929971408438085,
+          "remaining_budget": 2.0700285915619148,
+          "nodes_explored": 127,
+          "nodes_pruned": 102,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 229,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            2,
+            1
+          ],
+          "current_profit": 19.0,
+          "current_cost": 13.166039385937875,
+          "remaining_budget": 4.833960614062125,
+          "nodes_explored": 127,
+          "nodes_pruned": 102,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 230,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            2,
+            1
+          ],
+          "current_profit": 19.0,
+          "current_cost": 13.166039385937875,
+          "remaining_budget": 4.833960614062125,
+          "nodes_explored": 128,
+          "nodes_pruned": 103,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 231,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3
+          ],
+          "current_profit": 13.0,
+          "current_cost": 8.06701987234509,
+          "remaining_budget": 9.93298012765491,
+          "nodes_explored": 128,
+          "nodes_pruned": 103,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 232,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.06701987234509,
+          "remaining_budget": 3.9329801276549095,
+          "nodes_explored": 129,
+          "nodes_pruned": 103,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 233,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 14.06701987234509,
+          "remaining_budget": 3.9329801276549095,
+          "nodes_explored": 130,
+          "nodes_pruned": 104,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 234,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 12.19012549796275,
+          "remaining_budget": 5.80987450203725,
+          "nodes_explored": 130,
+          "nodes_pruned": 104,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 235,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 12.19012549796275,
+          "remaining_budget": 5.80987450203725,
+          "nodes_explored": 131,
+          "nodes_pruned": 105,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 236,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 13.452184679479593,
+          "remaining_budget": 4.547815320520407,
+          "nodes_explored": 131,
+          "nodes_pruned": 105,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 237,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 13.452184679479593,
+          "remaining_budget": 4.547815320520407,
+          "nodes_explored": 132,
+          "nodes_pruned": 106,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 238,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            2
+          ],
+          "current_profit": 21.0,
+          "current_cost": 13.06701987234509,
+          "remaining_budget": 4.9329801276549095,
+          "nodes_explored": 132,
+          "nodes_pruned": 106,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 239,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            2
+          ],
+          "current_profit": 21.0,
+          "current_cost": 13.06701987234509,
+          "remaining_budget": 4.9329801276549095,
+          "nodes_explored": 133,
+          "nodes_pruned": 107,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 240,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            1
+          ],
+          "current_profit": 18.0,
+          "current_cost": 11.22929753251347,
+          "remaining_budget": 6.7707024674865295,
+          "nodes_explored": 133,
+          "nodes_pruned": 107,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 241,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            7
+          ],
+          "current_profit": 29.0,
+          "current_cost": 17.06024942735877,
+          "remaining_budget": 0.9397505726412305,
+          "nodes_explored": 134,
+          "nodes_pruned": 107,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 242,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            7
+          ],
+          "current_profit": 29.0,
+          "current_cost": 17.06024942735877,
+          "remaining_budget": 0.9397505726412305,
+          "nodes_explored": 135,
+          "nodes_pruned": 108,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 243,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            6
+          ],
+          "current_profit": 28.0,
+          "current_cost": 16.22929753251347,
+          "remaining_budget": 1.7707024674865295,
+          "nodes_explored": 135,
+          "nodes_pruned": 108,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 244,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            6
+          ],
+          "current_profit": 28.0,
+          "current_cost": 16.22929753251347,
+          "remaining_budget": 1.7707024674865295,
+          "nodes_explored": 136,
+          "nodes_pruned": 109,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 245,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            4
+          ],
+          "current_profit": 27.0,
+          "current_cost": 15.352403158131132,
+          "remaining_budget": 2.647596841868868,
+          "nodes_explored": 136,
+          "nodes_pruned": 109,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 246,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            4
+          ],
+          "current_profit": 27.0,
+          "current_cost": 15.352403158131132,
+          "remaining_budget": 2.647596841868868,
+          "nodes_explored": 137,
+          "nodes_pruned": 110,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 247,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            2
+          ],
+          "current_profit": 26.0,
+          "current_cost": 13.46536551001326,
+          "remaining_budget": 4.53463448998674,
+          "nodes_explored": 137,
+          "nodes_pruned": 110,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 248,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            3,
+            1,
+            2
+          ],
+          "current_profit": 26.0,
+          "current_cost": 13.46536551001326,
+          "remaining_budget": 4.53463448998674,
+          "nodes_explored": 138,
+          "nodes_pruned": 111,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 249,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            1
+          ],
+          "current_profit": 11.0,
+          "current_cost": 9.95405752046296,
+          "remaining_budget": 8.04594247953704,
+          "nodes_explored": 138,
+          "nodes_pruned": 111,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 250,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            1,
+            7
+          ],
+          "current_profit": 22.0,
+          "current_cost": 15.785009415308261,
+          "remaining_budget": 2.214990584691739,
+          "nodes_explored": 139,
+          "nodes_pruned": 111,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 251,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            1,
+            7
+          ],
+          "current_profit": 22.0,
+          "current_cost": 15.785009415308261,
+          "remaining_budget": 2.214990584691739,
+          "nodes_explored": 140,
+          "nodes_pruned": 112,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 252,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            1,
+            6
+          ],
+          "current_profit": 21.0,
+          "current_cost": 14.95405752046296,
+          "remaining_budget": 3.0459424795370396,
+          "nodes_explored": 140,
+          "nodes_pruned": 112,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 253,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            1,
+            6
+          ],
+          "current_profit": 21.0,
+          "current_cost": 14.95405752046296,
+          "remaining_budget": 3.0459424795370396,
+          "nodes_explored": 141,
+          "nodes_pruned": 113,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 254,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            1,
+            4
+          ],
+          "current_profit": 20.0,
+          "current_cost": 14.077163146080622,
+          "remaining_budget": 3.922836853919378,
+          "nodes_explored": 141,
+          "nodes_pruned": 113,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 255,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            1,
+            4
+          ],
+          "current_profit": 20.0,
+          "current_cost": 14.077163146080622,
+          "remaining_budget": 3.922836853919378,
+          "nodes_explored": 142,
+          "nodes_pruned": 114,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 256,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            1,
+            2
+          ],
+          "current_profit": 19.0,
+          "current_cost": 12.19012549796275,
+          "remaining_budget": 5.80987450203725,
+          "nodes_explored": 142,
+          "nodes_pruned": 114,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 257,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            1,
+            2
+          ],
+          "current_profit": 19.0,
+          "current_cost": 12.19012549796275,
+          "remaining_budget": 5.80987450203725,
+          "nodes_explored": 143,
+          "nodes_pruned": 115,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 258,
+          "action": "add_node",
+          "route": [
+            0,
+            5,
+            1,
+            3
+          ],
+          "current_profit": 18.0,
+          "current_cost": 13.11633518063134,
+          "remaining_budget": 4.88366481936866,
+          "nodes_explored": 143,
+          "nodes_pruned": 115,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 259,
+          "action": "prune",
+          "route": [
+            0,
+            5,
+            1,
+            3
+          ],
+          "current_profit": 18.0,
+          "current_cost": 13.11633518063134,
+          "remaining_budget": 4.88366481936866,
+          "nodes_explored": 144,
+          "nodes_pruned": 116,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 260,
+          "action": "add_node",
+          "route": [
+            0,
+            1
+          ],
+          "current_profit": 5.0,
+          "current_cost": 2.23606797749979,
+          "remaining_budget": 15.76393202250021,
+          "nodes_explored": 144,
+          "nodes_pruned": 116,
+          "decision_reason": "add node 1 (profit=5.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 261,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            7
+          ],
+          "current_profit": 16.0,
+          "current_cost": 8.06701987234509,
+          "remaining_budget": 9.93298012765491,
+          "nodes_explored": 145,
+          "nodes_pruned": 116,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 262,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            7
+          ],
+          "current_profit": 16.0,
+          "current_cost": 8.06701987234509,
+          "remaining_budget": 9.93298012765491,
+          "nodes_explored": 146,
+          "nodes_pruned": 117,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 263,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            6
+          ],
+          "current_profit": 15.0,
+          "current_cost": 7.23606797749979,
+          "remaining_budget": 10.76393202250021,
+          "nodes_explored": 146,
+          "nodes_pruned": 117,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 264,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 9.47213595499958,
+          "remaining_budget": 8.52786404500042,
+          "nodes_explored": 147,
+          "nodes_pruned": 117,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 265,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "current_profit": 26.0,
+          "current_cost": 9.47213595499958,
+          "remaining_budget": 8.52786404500042,
+          "nodes_explored": 148,
+          "nodes_pruned": 118,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 266,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            6,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 10.39834563766817,
+          "remaining_budget": 7.60165436233183,
+          "nodes_explored": 148,
+          "nodes_pruned": 118,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 267,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            6,
+            4
+          ],
+          "current_profit": 24.0,
+          "current_cost": 10.39834563766817,
+          "remaining_budget": 7.60165436233183,
+          "nodes_explored": 149,
+          "nodes_pruned": 119,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 268,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            6,
+            2
+          ],
+          "current_profit": 23.0,
+          "current_cost": 12.335087491092574,
+          "remaining_budget": 5.664912508907426,
+          "nodes_explored": 149,
+          "nodes_pruned": 119,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 269,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            6,
+            2
+          ],
+          "current_profit": 23.0,
+          "current_cost": 12.335087491092574,
+          "remaining_budget": 5.664912508907426,
+          "nodes_explored": 150,
+          "nodes_pruned": 120,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 270,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            6,
+            3
+          ],
+          "current_profit": 22.0,
+          "current_cost": 11.359173603117451,
+          "remaining_budget": 6.640826396882549,
+          "nodes_explored": 150,
+          "nodes_pruned": 120,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 271,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            6,
+            3
+          ],
+          "current_profit": 22.0,
+          "current_cost": 11.359173603117451,
+          "remaining_budget": 6.640826396882549,
+          "nodes_explored": 151,
+          "nodes_pruned": 121,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 272,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            6,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 9.23606797749979,
+          "remaining_budget": 8.76393202250021,
+          "nodes_explored": 151,
+          "nodes_pruned": 121,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 273,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            6,
+            5
+          ],
+          "current_profit": 21.0,
+          "current_cost": 9.23606797749979,
+          "remaining_budget": 8.76393202250021,
+          "nodes_explored": 152,
+          "nodes_pruned": 122,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 274,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            4
+          ],
+          "current_profit": 14.0,
+          "current_cost": 6.35917360311745,
+          "remaining_budget": 11.640826396882549,
+          "nodes_explored": 152,
+          "nodes_pruned": 122,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 275,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 8.595241580617241,
+          "remaining_budget": 9.404758419382759,
+          "nodes_explored": 153,
+          "nodes_pruned": 122,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 276,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "current_profit": 25.0,
+          "current_cost": 8.595241580617241,
+          "remaining_budget": 9.404758419382759,
+          "nodes_explored": 154,
+          "nodes_pruned": 123,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 277,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            4,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 9.52145126328583,
+          "remaining_budget": 8.47854873671417,
+          "nodes_explored": 154,
+          "nodes_pruned": 123,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 278,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            4,
+            6
+          ],
+          "current_profit": 24.0,
+          "current_cost": 9.52145126328583,
+          "remaining_budget": 8.47854873671417,
+          "nodes_explored": 155,
+          "nodes_pruned": 124,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 279,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            4,
+            2
+          ],
+          "current_profit": 22.0,
+          "current_cost": 9.187600727863641,
+          "remaining_budget": 8.812399272136359,
+          "nodes_explored": 155,
+          "nodes_pruned": 124,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 280,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            4,
+            2
+          ],
+          "current_profit": 22.0,
+          "current_cost": 9.187600727863641,
+          "remaining_budget": 8.812399272136359,
+          "nodes_explored": 156,
+          "nodes_pruned": 125,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 281,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            4,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.744338410251954,
+          "remaining_budget": 6.255661589748046,
+          "nodes_explored": 156,
+          "nodes_pruned": 125,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 282,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            4,
+            3
+          ],
+          "current_profit": 21.0,
+          "current_cost": 11.744338410251954,
+          "remaining_budget": 6.255661589748046,
+          "nodes_explored": 157,
+          "nodes_pruned": 126,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 283,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.601814290236735,
+          "remaining_budget": 7.398185709763265,
+          "nodes_explored": 157,
+          "nodes_pruned": 126,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 284,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.601814290236735,
+          "remaining_budget": 7.398185709763265,
+          "nodes_explored": 158,
+          "nodes_pruned": 127,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 285,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2
+          ],
+          "current_profit": 13.0,
+          "current_cost": 4.47213595499958,
+          "remaining_budget": 13.52786404500042,
+          "nodes_explored": 158,
+          "nodes_pruned": 127,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 286,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 9.47213595499958,
+          "remaining_budget": 8.52786404500042,
+          "nodes_explored": 159,
+          "nodes_pruned": 127,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 287,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "current_profit": 24.0,
+          "current_cost": 9.47213595499958,
+          "remaining_budget": 8.52786404500042,
+          "nodes_explored": 160,
+          "nodes_pruned": 128,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 288,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 9.571155468592364,
+          "remaining_budget": 8.428844531407636,
+          "nodes_explored": 160,
+          "nodes_pruned": 128,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 289,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "current_profit": 23.0,
+          "current_cost": 9.571155468592364,
+          "remaining_budget": 8.428844531407636,
+          "nodes_explored": 161,
+          "nodes_pruned": 129,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 290,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 7.3005630797457695,
+          "remaining_budget": 10.69943692025423,
+          "nodes_explored": 161,
+          "nodes_pruned": 129,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=2.83)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 291,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "current_profit": 22.0,
+          "current_cost": 7.3005630797457695,
+          "remaining_budget": 10.69943692025423,
+          "nodes_explored": 162,
+          "nodes_pruned": 130,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 292,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "current_profit": 20.0,
+          "current_cost": 9.47213595499958,
+          "remaining_budget": 8.52786404500042,
+          "nodes_explored": 162,
+          "nodes_pruned": 130,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 293,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 15.47213595499958,
+          "remaining_budget": 2.5278640450004204,
+          "nodes_explored": 163,
+          "nodes_pruned": 130,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 294,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            7
+          ],
+          "current_profit": 31.0,
+          "current_cost": 15.47213595499958,
+          "remaining_budget": 2.5278640450004204,
+          "nodes_explored": 164,
+          "nodes_pruned": 131,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 295,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 13.595241580617241,
+          "remaining_budget": 4.404758419382759,
+          "nodes_explored": 164,
+          "nodes_pruned": 131,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 296,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            6
+          ],
+          "current_profit": 30.0,
+          "current_cost": 13.595241580617241,
+          "remaining_budget": 4.404758419382759,
+          "nodes_explored": 165,
+          "nodes_pruned": 132,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 297,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 14.857300762134084,
+          "remaining_budget": 3.1426992378659158,
+          "nodes_explored": 165,
+          "nodes_pruned": 132,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 298,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "current_profit": 29.0,
+          "current_cost": 14.857300762134084,
+          "remaining_budget": 3.1426992378659158,
+          "nodes_explored": 166,
+          "nodes_pruned": 133,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 299,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 11.70820393249937,
+          "remaining_budget": 6.291796067500631,
+          "nodes_explored": 166,
+          "nodes_pruned": 133,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 300,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          "current_profit": 26.0,
+          "current_cost": 11.70820393249937,
+          "remaining_budget": 6.291796067500631,
+          "nodes_explored": 167,
+          "nodes_pruned": 134,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 301,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "current_profit": 19.0,
+          "current_cost": 9.571155468592364,
+          "remaining_budget": 8.428844531407636,
+          "nodes_explored": 167,
+          "nodes_pruned": 134,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 302,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "current_profit": 19.0,
+          "current_cost": 9.571155468592364,
+          "remaining_budget": 8.428844531407636,
+          "nodes_explored": 168,
+          "nodes_pruned": 135,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 303,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3
+          ],
+          "current_profit": 12.0,
+          "current_cost": 5.39834563766817,
+          "remaining_budget": 12.60165436233183,
+          "nodes_explored": 168,
+          "nodes_pruned": 135,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 304,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            7
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.39834563766817,
+          "remaining_budget": 6.60165436233183,
+          "nodes_explored": 169,
+          "nodes_pruned": 135,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 305,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            7
+          ],
+          "current_profit": 23.0,
+          "current_cost": 11.39834563766817,
+          "remaining_budget": 6.60165436233183,
+          "nodes_explored": 170,
+          "nodes_pruned": 136,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 306,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "current_profit": 22.0,
+          "current_cost": 9.52145126328583,
+          "remaining_budget": 8.47854873671417,
+          "nodes_explored": 170,
+          "nodes_pruned": 136,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 307,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "current_profit": 22.0,
+          "current_cost": 9.52145126328583,
+          "remaining_budget": 8.47854873671417,
+          "nodes_explored": 171,
+          "nodes_pruned": 137,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 308,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "current_profit": 21.0,
+          "current_cost": 10.783510444802673,
+          "remaining_budget": 7.216489555197327,
+          "nodes_explored": 171,
+          "nodes_pruned": 137,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 309,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "current_profit": 21.0,
+          "current_cost": 10.783510444802673,
+          "remaining_budget": 7.216489555197327,
+          "nodes_explored": 172,
+          "nodes_pruned": 138,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 310,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.39834563766817,
+          "remaining_budget": 7.60165436233183,
+          "nodes_explored": 172,
+          "nodes_pruned": 138,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 311,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.39834563766817,
+          "remaining_budget": 7.60165436233183,
+          "nodes_explored": 173,
+          "nodes_pruned": 139,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 312,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "current_profit": 18.0,
+          "current_cost": 7.63441361516796,
+          "remaining_budget": 10.36558638483204,
+          "nodes_explored": 173,
+          "nodes_pruned": 139,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 313,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "current_profit": 29.0,
+          "current_cost": 11.75751924078562,
+          "remaining_budget": 6.242480759214381,
+          "nodes_explored": 174,
+          "nodes_pruned": 139,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 314,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "current_profit": 29.0,
+          "current_cost": 11.75751924078562,
+          "remaining_budget": 6.242480759214381,
+          "nodes_explored": 175,
+          "nodes_pruned": 140,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 315,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            6
+          ],
+          "current_profit": 28.0,
+          "current_cost": 9.63441361516796,
+          "remaining_budget": 8.36558638483204,
+          "nodes_explored": 175,
+          "nodes_pruned": 140,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 316,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            6
+          ],
+          "current_profit": 28.0,
+          "current_cost": 9.63441361516796,
+          "remaining_budget": 8.36558638483204,
+          "nodes_explored": 176,
+          "nodes_pruned": 141,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 317,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            4
+          ],
+          "current_profit": 27.0,
+          "current_cost": 11.877054302287245,
+          "remaining_budget": 6.122945697712755,
+          "nodes_explored": 176,
+          "nodes_pruned": 141,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 318,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            4
+          ],
+          "current_profit": 27.0,
+          "current_cost": 11.877054302287245,
+          "remaining_budget": 6.122945697712755,
+          "nodes_explored": 177,
+          "nodes_pruned": 142,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 319,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            2
+          ],
+          "current_profit": 26.0,
+          "current_cost": 12.733433128760744,
+          "remaining_budget": 5.266566871239256,
+          "nodes_explored": 177,
+          "nodes_pruned": 142,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 320,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            3,
+            5,
+            2
+          ],
+          "current_profit": 26.0,
+          "current_cost": 12.733433128760744,
+          "remaining_budget": 5.266566871239256,
+          "nodes_explored": 178,
+          "nodes_pruned": 143,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 321,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5
+          ],
+          "current_profit": 11.0,
+          "current_cost": 6.35917360311745,
+          "remaining_budget": 11.640826396882549,
+          "nodes_explored": 178,
+          "nodes_pruned": 143,
+          "decision_reason": "add node 5 (profit=6.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 322,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            7
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 179,
+          "nodes_pruned": 143,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 323,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            7
+          ],
+          "current_profit": 22.0,
+          "current_cost": 10.482279228735111,
+          "remaining_budget": 7.517720771264889,
+          "nodes_explored": 180,
+          "nodes_pruned": 144,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 324,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            6
+          ],
+          "current_profit": 21.0,
+          "current_cost": 8.359173603117451,
+          "remaining_budget": 9.640826396882549,
+          "nodes_explored": 180,
+          "nodes_pruned": 144,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=2.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 325,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            7
+          ],
+          "current_profit": 32.0,
+          "current_cost": 10.595241580617241,
+          "remaining_budget": 7.404758419382759,
+          "nodes_explored": 181,
+          "nodes_pruned": 144,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 326,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            7
+          ],
+          "current_profit": 32.0,
+          "current_cost": 10.595241580617241,
+          "remaining_budget": 7.404758419382759,
+          "nodes_explored": 182,
+          "nodes_pruned": 145,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 327,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            4
+          ],
+          "current_profit": 30.0,
+          "current_cost": 11.521451263285831,
+          "remaining_budget": 6.478548736714169,
+          "nodes_explored": 182,
+          "nodes_pruned": 145,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=3.16)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 328,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            4
+          ],
+          "current_profit": 30.0,
+          "current_cost": 11.521451263285831,
+          "remaining_budget": 6.478548736714169,
+          "nodes_explored": 183,
+          "nodes_pruned": 146,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 329,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            2
+          ],
+          "current_profit": 29.0,
+          "current_cost": 13.458193116710236,
+          "remaining_budget": 4.541806883289764,
+          "nodes_explored": 183,
+          "nodes_pruned": 146,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 330,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            2
+          ],
+          "current_profit": 29.0,
+          "current_cost": 13.458193116710236,
+          "remaining_budget": 4.541806883289764,
+          "nodes_explored": 184,
+          "nodes_pruned": 147,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 331,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            3
+          ],
+          "current_profit": 28.0,
+          "current_cost": 12.482279228735113,
+          "remaining_budget": 5.517720771264887,
+          "nodes_explored": 184,
+          "nodes_pruned": 147,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 332,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            6,
+            3
+          ],
+          "current_profit": 28.0,
+          "current_cost": 12.482279228735113,
+          "remaining_budget": 5.517720771264887,
+          "nodes_explored": 185,
+          "nodes_pruned": 148,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 333,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            4
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.601814290236735,
+          "remaining_budget": 7.398185709763265,
+          "nodes_explored": 185,
+          "nodes_pruned": 148,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=4.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 334,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            4
+          ],
+          "current_profit": 20.0,
+          "current_cost": 10.601814290236735,
+          "remaining_budget": 7.398185709763265,
+          "nodes_explored": 186,
+          "nodes_pruned": 149,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 335,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            2
+          ],
+          "current_profit": 19.0,
+          "current_cost": 11.458193116710234,
+          "remaining_budget": 6.541806883289766,
+          "nodes_explored": 186,
+          "nodes_pruned": 149,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.10)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 336,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            2
+          ],
+          "current_profit": 19.0,
+          "current_cost": 11.458193116710234,
+          "remaining_budget": 6.541806883289766,
+          "nodes_explored": 187,
+          "nodes_pruned": 150,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 337,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            3
+          ],
+          "current_profit": 18.0,
+          "current_cost": 8.595241580617241,
+          "remaining_budget": 9.404758419382759,
+          "nodes_explored": 187,
+          "nodes_pruned": 150,
+          "decision_reason": "add node 3 (profit=7.0, edge_cost=2.24)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 338,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            7
+          ],
+          "current_profit": 29.0,
+          "current_cost": 14.595241580617241,
+          "remaining_budget": 3.404758419382759,
+          "nodes_explored": 188,
+          "nodes_pruned": 150,
+          "decision_reason": "add node 7 (profit=11.0, edge_cost=6.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 339,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            7
+          ],
+          "current_profit": 29.0,
+          "current_cost": 14.595241580617241,
+          "remaining_budget": 3.404758419382759,
+          "nodes_explored": 189,
+          "nodes_pruned": 151,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 340,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            6
+          ],
+          "current_profit": 28.0,
+          "current_cost": 12.718347206234903,
+          "remaining_budget": 5.281652793765097,
+          "nodes_explored": 189,
+          "nodes_pruned": 151,
+          "decision_reason": "add node 6 (profit=10.0, edge_cost=4.12)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 341,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            6
+          ],
+          "current_profit": 28.0,
+          "current_cost": 12.718347206234903,
+          "remaining_budget": 5.281652793765097,
+          "nodes_explored": 190,
+          "nodes_pruned": 152,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 342,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            4
+          ],
+          "current_profit": 27.0,
+          "current_cost": 13.980406387751746,
+          "remaining_budget": 4.019593612248254,
+          "nodes_explored": 190,
+          "nodes_pruned": 152,
+          "decision_reason": "add node 4 (profit=9.0, edge_cost=5.39)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 343,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            4
+          ],
+          "current_profit": 27.0,
+          "current_cost": 13.980406387751746,
+          "remaining_budget": 4.019593612248254,
+          "nodes_explored": 191,
+          "nodes_pruned": 153,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 344,
+          "action": "add_node",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            2
+          ],
+          "current_profit": 26.0,
+          "current_cost": 13.595241580617241,
+          "remaining_budget": 4.404758419382759,
+          "nodes_explored": 191,
+          "nodes_pruned": 153,
+          "decision_reason": "add node 2 (profit=8.0, edge_cost=5.00)",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        },
+        {
+          "step_number": 345,
+          "action": "prune",
+          "route": [
+            0,
+            1,
+            5,
+            3,
+            2
+          ],
+          "current_profit": 26.0,
+          "current_cost": 13.595241580617241,
+          "remaining_budget": 4.404758419382759,
+          "nodes_explored": 192,
+          "nodes_pruned": 154,
+          "decision_reason": "cutting plane constraint violated",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 33.0
+        }
+      ]
+    }
+  },
+  "visualization": {
+    "name": "comparative_medium_op",
+    "start": 0,
+    "budget": 18.0,
+    "route": [
+      0,
+      1,
+      2,
+      4,
+      7,
+      0
+    ],
+    "route_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    "route_points": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        1.0
+      ],
+      [
+        4.0,
+        0.0
+      ],
+      [
+        6.0,
+        2.0
+      ],
+      [
+        7.0,
+        4.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "profit": 0.0,
+        "visited": false,
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "id": 1,
+        "profit": 5.0,
+        "visited": true,
+        "x": 2.0,
+        "y": 1.0
+      },
+      {
+        "id": 2,
+        "profit": 8.0,
+        "visited": true,
+        "x": 4.0,
+        "y": 0.0
+      },
+      {
+        "id": 3,
+        "profit": 7.0,
+        "visited": false,
+        "x": 1.0,
+        "y": 4.0
+      },
+      {
+        "id": 4,
+        "profit": 9.0,
+        "visited": true,
+        "x": 6.0,
+        "y": 2.0
+      },
+      {
+        "id": 5,
+        "profit": 6.0,
+        "visited": false,
+        "x": 3.0,
+        "y": 5.0
+      },
+      {
+        "id": 6,
+        "profit": 10.0,
+        "visited": false,
+        "x": 5.0,
+        "y": 5.0
+      },
+      {
+        "id": 7,
+        "profit": 11.0,
+        "visited": true,
+        "x": 7.0,
+        "y": 4.0
+      }
+    ],
+    "route_cost": 17.598888805544107,
+    "route_profit": 33.0,
+    "has_coordinates": true
+  }
+}
