@@ -280,24 +280,24 @@ def generate_html_viewer(
 
             const visited = new Set((step.route || []).slice(1, -1));
             const ctx = deriveStepContext(step);
-            const acceptedKeys = new Set(ctx.accepted.map((e) => edgeKey(e[0], e[1])));
+            const acceptedKeys = new Set(ctx.accepted.map((edge) => edgeKey(edge[0], edge[1])));
 
             const traces = [];
             traces.push(...buildBaseEdgeTraces());
 
-            for (const e of ctx.accepted) {{
-                const t = buildHighlightTrace(e, "#1fa56a", 4, "solid");
-                if (t) traces.push(t);
+            for (const edge of ctx.accepted) {{
+                const trace = buildHighlightTrace(edge, "#1fa56a", 4, "solid");
+                if (trace) traces.push(trace);
             }}
 
             if (ctx.pruned && !acceptedKeys.has(edgeKey(ctx.pruned[0], ctx.pruned[1]))) {{
-                const t = buildHighlightTrace(ctx.pruned, "#d7263d", 4, "dash");
-                if (t) traces.push(t);
+                const trace = buildHighlightTrace(ctx.pruned, "#d7263d", 4, "dash");
+                if (trace) traces.push(trace);
             }}
 
             if (ctx.tested && !acceptedKeys.has(edgeKey(ctx.tested[0], ctx.tested[1]))) {{
-                const t = buildHighlightTrace(ctx.tested, "#ff9f1a", 4, "solid");
-                if (t) traces.push(t);
+                const trace = buildHighlightTrace(ctx.tested, "#ff9f1a", 4, "solid");
+                if (trace) traces.push(trace);
             }}
 
             traces.push(buildNodeTrace(visited));
@@ -313,6 +313,23 @@ def generate_html_viewer(
             }};
 
             Plotly.react("graphView", traces, layout, {{ responsive: true, displayModeBar: false }});
+        }}
+
+        function updateBestSolution(step) {{
+            const bestRoute = bestSolutionCache.route || [0,0];
+            const routeStr = bestRoute.join(" → ");
+            document.getElementById("bestRoute").textContent = routeStr;
+            document.getElementById("bestProfit").textContent = Number(bestSolutionCache.profit).toFixed(2);
+            document.getElementById("budgetLabel").textContent = totalBudget.toFixed(2);
+            document.getElementById("bestCost").textContent = Number(bestSolutionCache.cost).toFixed(2);
+            document.getElementById("bestNodes").textContent = Math.max(0, bestRoute.length - 2);
+
+            // search only up to the current playback step so the panel updates as we play
+            const historySlice = algorithmSteps.steps.slice(0, currentStep + 1);
+            const foundStep = historySlice.find((s) => isCompleteRoute(s.route || []) && JSON.stringify(s.route || []) === JSON.stringify(bestRoute));
+
+            document.getElementById("bestFoundAt").textContent = foundStep ? `step ${{foundStep.step_number}}` : 'not found yet';
+            document.getElementById("bestStatus").textContent = "✓ Optimal";
         }}
 
         function updateBudgetProfitChart() {{
@@ -425,41 +442,7 @@ def generate_html_viewer(
             return route && route.length >= 2 && route[0] === 0 && route[route.length - 1] === 0;
         }}
 
-        function updateBestSolution(step) {{
-            // On first call, find when the best solution was actually discovered in state_history
-            if (bestSolutionCache.foundAt === -1) {{
-                const targetProfit = bestSolutionCache.profit;
-                const targetRoute = JSON.stringify(bestSolutionCache.route);
-                
-                for (let i = 0; i <= currentStep; i++) {{
-                    const s = algorithmSteps.steps[i];
-                    if (s.best_incumbent_profit === targetProfit) {{
-                        const route = s.route || [];
-                        if (isCompleteRoute(route) && JSON.stringify(route) === targetRoute) {{
-                            bestSolutionCache.foundAt = s.step_number;
-                            break;
-                        }}
-                    }}
-                }}
-                
-                // If not found in state_history, it was found during initialization
-                if (bestSolutionCache.foundAt === -1) {{
-                    bestSolutionCache.foundAt = 0;
-                }}
-            }}
-
-            const numNodes = Math.max(0, bestSolutionCache.route.length - 2);
-            const routeStr = bestSolutionCache.route.join(" → ");
-
-            document.getElementById("bestRoute").textContent = routeStr;
-            document.getElementById("bestProfit").textContent = Number(bestSolutionCache.profit).toFixed(2);
-            document.getElementById("budgetLabel").textContent = totalBudget.toFixed(2);
-            document.getElementById("bestCost").textContent = Number(bestSolutionCache.cost).toFixed(2);
-            document.getElementById("bestNodes").textContent = numNodes;
-            document.getElementById("bestFoundAt").textContent = 
-                bestSolutionCache.foundAt === 0 ? "step 0 (init)" : `step ${{bestSolutionCache.foundAt}}`;
-            document.getElementById("bestStatus").textContent = "✓ Optimal";
-        }}
+        
 
 
         function updateVisualization() {{
