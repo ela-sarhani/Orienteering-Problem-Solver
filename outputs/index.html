@@ -23,19 +23,26 @@
     <div class="controls">
       <div class="control-item">
         <div class="control-label">Exact</div>
-        <select id="exact" onchange="upd()"><option>-</option><option value="comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html">Branch and Bound</option><option value="comparative_experiments/shared_test_example_op/branch_and_cut/shared_test_example_op_branch_and_cut_viewer.html">Branch and Cut</option><option value="comparative_experiments/shared_test_example_op/dynamic_programming/shared_test_example_op_dynamic_programming_viewer.html">Dynamic Programming</option></select>
+        <select id="exact" onchange="upd('exact')"><option>-</option><option value="comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html">Branch and Bound</option><option value="comparative_experiments/shared_test_example_op/branch_and_cut/shared_test_example_op_branch_and_cut_viewer.html">Branch and Cut</option><option value="comparative_experiments/shared_test_example_op/dynamic_programming/shared_test_example_op_dynamic_programming_viewer.html">Dynamic Programming</option></select>
       </div>
       <div class="control-item">
         <div class="control-label">Metaheuristic</div>
-        <select id="meta" onchange="upd()"><option>-</option><option value="comparative_experiments/shared_test_example_op/genetic_algorithm/shared_test_example_op_genetic_algorithm_viewer.html">Genetic Algorithm</option><option value="comparative_experiments/shared_test_example_op/tabu_search/shared_test_example_op_tabu_search_viewer.html">Tabu Search</option><option value="comparative_experiments/shared_test_example_op/grasp/shared_test_example_op_grasp_viewer.html">GRASP</option></select>
+        <select id="meta" onchange="upd('meta')"><option>-</option><option value="comparative_experiments/shared_test_example_op/genetic_algorithm/shared_test_example_op_genetic_algorithm_viewer.html">Genetic Algorithm</option><option value="comparative_experiments/shared_test_example_op/tabu_search/shared_test_example_op_tabu_search_viewer.html">Tabu Search</option><option value="comparative_experiments/shared_test_example_op/grasp/shared_test_example_op_grasp_viewer.html">GRASP</option></select>
       </div>
     </div>
   </div>
   <iframe id="frame" src="comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html"></iframe>
   <script>
     const e=document.getElementById('exact'),m=document.getElementById('meta'),f=document.getElementById('frame');
-    document.getElementById('exact').value='comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html';
-    function upd(){const v=e.value||m.value;if(v){f.src=v;e.value===v?m.value='':e.value=''}}
+    const defaultExact='comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html';
+    e.value=defaultExact;
+    function upd(source){
+      const value=source==='exact' ? e.value : m.value;
+      if(!value || value==='-') return;
+      f.src=value;
+      if(source==='exact') m.value='';
+      if(source==='meta') e.value='';
+    }
   </script>
 </body>
 </html>
