@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orienteering Problem Viewer Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; }
+    .bar { background: #fff; padding: 12px 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .title { font-size: 13px; font-weight: 600; color: #333; margin-right: 8px; }
+    .controls { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+    .control-item { display: flex; flex-direction: column; gap: 4px; }
+    .control-label { font-size: 11px; font-weight: 600; color: #555; text-transform: uppercase; }
+    select { padding: 6px 8px; font-size: 12px; border: 1px solid #999; border-radius: 4px; cursor: pointer; min-width: 160px; background: #fff; }
+    select:focus { outline: none; border-color: #0066cc; box-shadow: 0 0 0 2px rgba(0,102,204,0.15); }
+    iframe { width: 100%; height: calc(100vh - 50px); border: none; }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="title">Choose the approach:</div>
+    <div class="controls">
+      <div class="control-item">
+        <div class="control-label">Exact</div>
+        <select id="exact" onchange="upd()"><option>-</option><option value="comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html">Branch and Bound</option><option value="comparative_experiments/shared_test_example_op/branch_and_cut/shared_test_example_op_branch_and_cut_viewer.html">Branch and Cut</option><option value="comparative_experiments/shared_test_example_op/dynamic_programming/shared_test_example_op_dynamic_programming_viewer.html">Dynamic Programming</option></select>
+      </div>
+      <div class="control-item">
+        <div class="control-label">Metaheuristic</div>
+        <select id="meta" onchange="upd()"><option>-</option><option value="comparative_experiments/shared_test_example_op/genetic_algorithm/shared_test_example_op_genetic_algorithm_viewer.html">Genetic Algorithm</option><option value="comparative_experiments/shared_test_example_op/tabu_search/shared_test_example_op_tabu_search_viewer.html">Tabu Search</option><option value="comparative_experiments/shared_test_example_op/grasp/shared_test_example_op_grasp_viewer.html">GRASP</option></select>
+      </div>
+    </div>
+  </div>
+  <iframe id="frame" src="comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html"></iframe>
+  <script>
+    const e=document.getElementById('exact'),m=document.getElementById('meta'),f=document.getElementById('frame');
+    document.getElementById('exact').value='comparative_experiments/shared_test_example_op/branch_and_bound/shared_test_example_op_branch_and_bound_viewer.html';
+    function upd(){const v=e.value||m.value;if(v){f.src=v;e.value===v?m.value='':e.value=''}}
+  </script>
+</body>
+</html>
