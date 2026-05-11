@@ -18,7 +18,7 @@
   "budget": 15.0,
   "nodes_explored": 252,
   "pruned_nodes": 422,
-  "runtime_seconds": 0.005805,
+  "runtime_seconds": 0.009638,
   "metadata": {
     "incumbent_source": "greedy_completion",
     "algorithm": "depth_first_branch_and_bound",
