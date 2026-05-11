@@ -1,0 +1,2140 @@
+{
+  "method": "tabu_search",
+  "feasible": true,
+  "route": [
+    0,
+    2,
+    4,
+    1,
+    0
+  ],
+  "visited_nodes": [
+    2,
+    4,
+    1
+  ],
+  "total_profit": 22.0,
+  "total_cost": 13.18760072786364,
+  "budget": 15.0,
+  "nodes_explored": 90,
+  "pruned_nodes": 183,
+  "runtime_seconds": 0.010055,
+  "metadata": {
+    "algorithm": "tabu_search",
+    "state_history": {
+      "total_steps": 91,
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "initialize",
+          "route": [
+            0,
+            2,
+            4,
+            1,
+            0
+          ],
+          "current_profit": 22.0,
+          "current_cost": 13.18760072786364,
+          "remaining_budget": 1.8123992721363607,
+          "iterations": 0,
+          "candidate_evaluations": 0,
+          "decision_reason": "greedy incumbent initialized",
+          "candidate_nodes": [],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 2,
+          "action": "iteration",
+          "route": [
+            0,
+            2,
+            4,
+            0
+          ],
+          "current_profit": 17.0,
+          "current_cost": 13.152982445082948,
+          "remaining_budget": 1.847017554917052,
+          "iterations": 1,
+          "candidate_evaluations": 3,
+          "decision_reason": "remove node 1",
+          "candidate_nodes": [
+            1,
+            2,
+            4
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 3,
+          "action": "iteration",
+          "route": [
+            0,
+            4,
+            0
+          ],
+          "current_profit": 9.0,
+          "current_cost": 12.649110640673518,
+          "remaining_budget": 2.350889359326482,
+          "iterations": 2,
+          "candidate_evaluations": 6,
+          "decision_reason": "remove node 2",
+          "candidate_nodes": [
+            1,
+            2,
+            4
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 4,
+          "action": "iteration",
+          "route": [
+            0,
+            0
+          ],
+          "current_profit": 0,
+          "current_cost": 0.0,
+          "remaining_budget": 15.0,
+          "iterations": 3,
+          "candidate_evaluations": 9,
+          "decision_reason": "remove node 4",
+          "candidate_nodes": [
+            2,
+            1,
+            4
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 5,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            0
+          ],
+          "current_profit": 10.0,
+          "current_cost": 14.142135623730951,
+          "remaining_budget": 0.857864376269049,
+          "iterations": 4,
+          "candidate_evaluations": 15,
+          "decision_reason": "insert node 6",
+          "candidate_nodes": [
+            6,
+            4,
+            2,
+            3,
+            5
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 6,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 5,
+          "candidate_evaluations": 18,
+          "decision_reason": "insert node 5",
+          "candidate_nodes": [
+            5,
+            1,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 7,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 6,
+          "candidate_evaluations": 21,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 8,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 7,
+          "candidate_evaluations": 24,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 9,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 8,
+          "candidate_evaluations": 27,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 10,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 9,
+          "candidate_evaluations": 30,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 11,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 10,
+          "candidate_evaluations": 33,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 12,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 11,
+          "candidate_evaluations": 36,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 13,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 12,
+          "candidate_evaluations": 39,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 14,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 13,
+          "candidate_evaluations": 42,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 15,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 14,
+          "candidate_evaluations": 45,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 16,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 15,
+          "candidate_evaluations": 48,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 17,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 16,
+          "candidate_evaluations": 51,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 18,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 17,
+          "candidate_evaluations": 54,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 19,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 18,
+          "candidate_evaluations": 57,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 20,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 19,
+          "candidate_evaluations": 60,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 21,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 20,
+          "candidate_evaluations": 63,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 22,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 21,
+          "candidate_evaluations": 66,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 23,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 22,
+          "candidate_evaluations": 69,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 24,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 23,
+          "candidate_evaluations": 72,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 25,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 24,
+          "candidate_evaluations": 75,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 26,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 25,
+          "candidate_evaluations": 78,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 27,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 26,
+          "candidate_evaluations": 81,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 28,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 27,
+          "candidate_evaluations": 84,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 29,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 28,
+          "candidate_evaluations": 87,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 30,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 29,
+          "candidate_evaluations": 90,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 31,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 30,
+          "candidate_evaluations": 93,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 32,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 31,
+          "candidate_evaluations": 96,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 33,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 32,
+          "candidate_evaluations": 99,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 34,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 33,
+          "candidate_evaluations": 102,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 35,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 34,
+          "candidate_evaluations": 105,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 36,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 35,
+          "candidate_evaluations": 108,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 37,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 36,
+          "candidate_evaluations": 111,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 38,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 37,
+          "candidate_evaluations": 114,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 39,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 38,
+          "candidate_evaluations": 117,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 40,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 39,
+          "candidate_evaluations": 120,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 41,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 40,
+          "candidate_evaluations": 123,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 42,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 41,
+          "candidate_evaluations": 126,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 43,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 42,
+          "candidate_evaluations": 129,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 44,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 43,
+          "candidate_evaluations": 132,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 45,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 44,
+          "candidate_evaluations": 135,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 46,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 45,
+          "candidate_evaluations": 138,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 47,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 46,
+          "candidate_evaluations": 141,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 48,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 47,
+          "candidate_evaluations": 144,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 49,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 48,
+          "candidate_evaluations": 147,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 50,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 49,
+          "candidate_evaluations": 150,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 51,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 50,
+          "candidate_evaluations": 153,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 52,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 51,
+          "candidate_evaluations": 156,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 53,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 52,
+          "candidate_evaluations": 159,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 54,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 53,
+          "candidate_evaluations": 162,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 55,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 54,
+          "candidate_evaluations": 165,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 56,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 55,
+          "candidate_evaluations": 168,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 57,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 56,
+          "candidate_evaluations": 171,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 58,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 57,
+          "candidate_evaluations": 174,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 59,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 58,
+          "candidate_evaluations": 177,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 60,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 59,
+          "candidate_evaluations": 180,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 61,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 60,
+          "candidate_evaluations": 183,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 62,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 61,
+          "candidate_evaluations": 186,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 63,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 62,
+          "candidate_evaluations": 189,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 64,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 63,
+          "candidate_evaluations": 192,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 65,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 64,
+          "candidate_evaluations": 195,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 66,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 65,
+          "candidate_evaluations": 198,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 67,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 66,
+          "candidate_evaluations": 201,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 68,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 67,
+          "candidate_evaluations": 204,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 69,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 68,
+          "candidate_evaluations": 207,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 70,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 69,
+          "candidate_evaluations": 210,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 71,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 70,
+          "candidate_evaluations": 213,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 72,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 71,
+          "candidate_evaluations": 216,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 73,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 72,
+          "candidate_evaluations": 219,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 74,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 73,
+          "candidate_evaluations": 222,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 75,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 74,
+          "candidate_evaluations": 225,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 76,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 75,
+          "candidate_evaluations": 228,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 77,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 76,
+          "candidate_evaluations": 231,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 78,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 77,
+          "candidate_evaluations": 234,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 79,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 78,
+          "candidate_evaluations": 237,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 80,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 79,
+          "candidate_evaluations": 240,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 81,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 80,
+          "candidate_evaluations": 243,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 82,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 81,
+          "candidate_evaluations": 246,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 83,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 82,
+          "candidate_evaluations": 249,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 84,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 83,
+          "candidate_evaluations": 252,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 85,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 84,
+          "candidate_evaluations": 255,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 86,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 85,
+          "candidate_evaluations": 258,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 87,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 86,
+          "candidate_evaluations": 261,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 88,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 87,
+          "candidate_evaluations": 264,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 89,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 88,
+          "candidate_evaluations": 267,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 90,
+          "action": "iteration",
+          "route": [
+            0,
+            5,
+            6,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 89,
+          "candidate_evaluations": 270,
+          "decision_reason": "aspiration move relocate node 5",
+          "candidate_nodes": [
+            5,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        },
+        {
+          "step_number": 91,
+          "action": "iteration",
+          "route": [
+            0,
+            6,
+            5,
+            0
+          ],
+          "current_profit": 16.0,
+          "current_cost": 14.902019706710776,
+          "remaining_budget": 0.09798029328922375,
+          "iterations": 90,
+          "candidate_evaluations": 273,
+          "decision_reason": "aspiration move relocate node 6",
+          "candidate_nodes": [
+            6,
+            5,
+            6
+          ],
+          "best_incumbent_profit": 22.0
+        }
+      ]
+    },
+    "best_route_signature": [
+      0,
+      2,
+      4,
+      1,
+      0
+    ]
+  },
+  "visualization": {
+    "name": "shared_test_example_op",
+    "start": 0,
+    "budget": 15.0,
+    "route": [
+      0,
+      2,
+      4,
+      1,
+      0
+    ],
+    "route_edges": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "route_points": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        4.0,
+        0.0
+      ],
+      [
+        6.0,
+        2.0
+      ],
+      [
+        2.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "profit": 0.0,
+        "visited": false,
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "id": 1,
+        "profit": 5.0,
+        "visited": true,
+        "x": 2.0,
+        "y": 1.0
+      },
+      {
+        "id": 2,
+        "profit": 8.0,
+        "visited": true,
+        "x": 4.0,
+        "y": 0.0
+      },
+      {
+        "id": 3,
+        "profit": 7.0,
+        "visited": false,
+        "x": 1.0,
+        "y": 4.0
+      },
+      {
+        "id": 4,
+        "profit": 9.0,
+        "visited": true,
+        "x": 6.0,
+        "y": 2.0
+      },
+      {
+        "id": 5,
+        "profit": 6.0,
+        "visited": false,
+        "x": 3.0,
+        "y": 5.0
+      },
+      {
+        "id": 6,
+        "profit": 10.0,
+        "visited": false,
+        "x": 5.0,
+        "y": 5.0
+      }
+    ],
+    "route_cost": 13.18760072786364,
+    "route_profit": 22.0,
+    "has_coordinates": true
+  }
+}
